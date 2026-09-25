@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infonexia | Noticias de Tecnología y Educación</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Encabezado: menú, marca y navegación. -->
+  <header class="header">
+    <div class="contenedor">
+      <div class="marca-grupo">
+        <button class="menu-hamburguesa" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
+        <a href="index.html" class="marca">Infonexia</a>
+      </div>
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Panel lateral de categorías y fondo. -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-cabecera">
+      <span class="sidebar-titulo">Categorías</span>
+      <button class="sidebar-cerrar" id="cerrarSidebar" aria-label="Cerrar menú de categorías">✕</button>
+    </div>
+    <input type="search" id="buscador" placeholder="Buscar en todo el sitio">
+    <ul>
+      <li><button class="filtro activo" data-categoria="todas">Inicio</button></li>
+      <li><button class="filtro" data-categoria="todas">Ver todas las categorías</button></li>
+      <li><button class="filtro" data-categoria="Tecnología">Tecnología</button></li>
+      <li><button class="filtro" data-categoria="Educación">Educación</button></li>
+      <li><button class="filtro" data-categoria="Colombia">Colombia</button></li>
+    </ul>
+  </aside>
+
+  <main class="contenedor">
+
+    <section class="hero">
+      <h1>Noticias Globales: Lo último en Tecnología y Educación</h1>
+      <p>Bienvenido a Infonexia, tu portal informativo de referencia sobre actualidad en tecnología y educación.</p>
+    </section>
+
+    <!-- Contenedor vacío: las cards las pinta home.js. -->
+    <section class="seccion" id="destacadas">
+      <h2>Te puede interesar...</h2>
+      <div class="grilla-noticias" id="grilla-destacadas">
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h3>¿Quieres recibir el resumen semanal de noticias?</h3>
+      <p>Suscríbete a nuestro boletín y recibe lo más destacado de tecnología y educación directo en tu correo.</p>
+      <form class="form-inline" id="form-newsletter">
+        <input type="email" id="correo-newsletter" placeholder="Ingrese su correo" required>
+        <button type="submit" class="btn">Suscribirme</button>
+      </form>
+      <p class="mensaje-error" id="error-newsletter"></p>
+    </section>
+
+  </main>
+
+  <!-- Enlaces del pie con filtro ?categoria= hacia noticias.html. -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer-marca">
+        <h4>Infonexia</h4>
+        <p>Infonexia @2026</p>
+      </div>
+      <div class="footer-columna">
+        <h4>Categorías</h4>
+        <a href="noticias.html?categoria=Educación">Educación</a>
+        <a href="noticias.html?categoria=Tecnología">Tecnología</a>
+      </div>
+      <div class="footer-columna">
+        <h4>Legal</h4>
+        <a href="#">Términos y condiciones</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
