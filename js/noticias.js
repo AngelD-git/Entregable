@@ -175,8 +175,10 @@ function inicializarFormularioNuevaNoticia() {
 function activarBotonesEliminar() {
   document.querySelectorAll("[data-eliminar]").forEach((boton) => {
     boton.addEventListener("click", () => {
-      eliminarNoticiaCreada(boton.dataset.eliminar);
+      if (!confirm("¿Eliminar esta noticia de este navegador? Esta acción no se puede deshacer.")) return;
+      if (!eliminarNoticiaCreada(boton.dataset.eliminar)) return;
       renderizarListado();
+      document.getElementById("estado-resultados").focus();
     });
   });
 }
