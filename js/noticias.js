@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!await cargarCatalogo()) return;
   const parametros = new URLSearchParams(window.location.search);
   const categoriaUrl = parametros.get("categoria");
-  if (categoriaUrl) categoriaActual = categoriaUrl;
+  if (CATEGORIAS.includes(categoriaUrl)) categoriaActual = categoriaUrl;
+  textoBusqueda = parametros.get("q") || "";
+  document.getElementById("buscador").value = textoBusqueda;
 
   inicializarFiltros();
   inicializarBuscador();
@@ -22,8 +24,8 @@ function obtenerNoticiasFiltradas() {
       categoriaActual === "todas" || noticia.categoria === categoriaActual;
     const coincideBusqueda =
       textoBusqueda.trim() === "" ||
-      noticia.titulo.toLowerCase().includes(textoBusqueda.toLowerCase()) ||
-      noticia.resumen.toLowerCase().includes(textoBusqueda.toLowerCase());
+      noticia.titulo.toLowerCase().includes(textoBusqueda.trim().toLocaleLowerCase("es")) ||
+      noticia.resumen.toLowerCase().includes(textoBusqueda.trim().toLocaleLowerCase("es"));
     return coincideCategoria && coincideBusqueda;
   });
 }
@@ -84,12 +86,24 @@ function cambiarPagina(numero) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function sincronizarFiltros() {
+  document.querySelectorAll(".filtro").forEach(b => {
+    b.classList.toggle("activo", b.dataset.categoria === categoriaActual);
+    b.setAttribute("aria-pressed", String(b.dataset.categoria === categoriaActual));
+  });
+  const url = new URL(location.href);
+  url.searchParams.set("categoria", categoriaActual);
+  history.replaceState(null, "", url);
+}
+
 function inicializarFiltros() {
+  sincronizarFiltros();
   document.querySelectorAll(".filtro").forEach((boton) => {
     boton.addEventListener("click", () => {
       document.querySelectorAll(".filtro").forEach((b) => b.classList.remove("activo"));
       boton.classList.add("activo");
       categoriaActual = boton.dataset.categoria;
+      sincronizarFiltros();
       paginaActual = 1;
       renderizarListado();
     });
