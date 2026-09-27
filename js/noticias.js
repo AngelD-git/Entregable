@@ -35,7 +35,8 @@ function renderizarListado() {
   const noticiasFiltradas = obtenerNoticiasFiltradas();
   const totalPaginas = Math.max(1, Math.ceil(noticiasFiltradas.length / NOTICIAS_POR_PAGINA));
 
-  if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+  paginaActual = Math.min(totalPaginas, Math.max(1, paginaActual));
+  document.getElementById("estado-resultados").textContent = `${noticiasFiltradas.length} noticias. Página ${paginaActual} de ${totalPaginas}.`;
 
   const inicio = (paginaActual - 1) * NOTICIAS_POR_PAGINA;
   const noticiasPagina = noticiasFiltradas.slice(inicio, inicio + NOTICIAS_POR_PAGINA);
@@ -68,7 +69,11 @@ function renderizarPaginacion(totalPaginas) {
   for (let i = 1; i <= totalPaginas; i++) {
     const boton = document.createElement("button");
     boton.textContent = i;
-    if (i === paginaActual) boton.classList.add("activo");
+    boton.setAttribute("aria-label", `Página ${i}`);
+    if (i === paginaActual) {
+      boton.classList.add("activo");
+      boton.setAttribute("aria-current", "page");
+    }
     boton.addEventListener("click", () => cambiarPagina(i));
     contenedor.appendChild(boton);
   }
@@ -83,7 +88,7 @@ function renderizarPaginacion(totalPaginas) {
 function cambiarPagina(numero) {
   paginaActual = numero;
   renderizarListado();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.getElementById("estado-resultados").focus();
 }
 
 function sincronizarFiltros() {
