@@ -13,3 +13,9 @@ Comparación ZIP/extracción con Python zipfile: 17/17 idénticos. Lectura pypdf
 Servidor `python -m http.server 8000 --bind 127.0.0.1` desde padre; urllib.request comprobó index.html y noticias.html en /Entregable-main/: HTTP 200 en ambos.
 
 `git diff --check` y `node --check js/*.js` (cada archivo): correctos.
+
+## S5 03/20
+
+`node smoke.cjs` (herramienta de trabajo externa, Chromium): PASS, subdirectorio /Entregable-main/, 9 registros, 6 tarjetas, HTTP 500 y recuperación con Reintentar, sin excepciones JS. Ejecución del navegador autorizada tras EPERM del aislamiento.
+
+`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
