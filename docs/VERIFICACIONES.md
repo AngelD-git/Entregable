@@ -31,3 +31,9 @@ Servidor `python -m http.server 8000 --bind 127.0.0.1` desde padre; urllib.reque
 `node smoke.cjs 5`: PASS. Título, resumen y cuerpo con <img onerror> se muestran como texto sin ejecución ni atributos onerror en listado/detalle. URL javascript rechazada. Se corrigió una referencia del título detectada por la primera prueba antes del commit.
 
 `git diff --check` y `node --check js/*.js` (cada archivo): correctos.
+
+## S5 06/20
+
+`node smoke.cjs 6`: PASS. URL Educación: 3 tarjetas y filtro activo; búsqueda sin resultados: 0 tarjetas; categoría inválida: catálogo completo. Se suprime Colombia por falta de registros y se conectan enlaces de otras vistas.
+
+`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
