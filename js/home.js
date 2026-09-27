@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  if (!await cargarCatalogo()) return;
   renderizarDestacadas();
   inicializarNewsletter();
 });
