@@ -55,26 +55,30 @@
 
         <!-- Mini CRUD: Filtro de noticias del usuario. -->
         <div class="panel-admin">
-          <h2>Publicar una nueva noticia</h2>
-          <form class="formulario" id="form-nueva-noticia">
+          <h2>Crear una noticia local</h2>
+          <p>Solo se guarda en este navegador y origen. No modifica el catálogo común ni se publica en Internet.</p>
+          <p id="estado-alta" role="status" tabindex="-1"></p>
+          <form class="formulario" id="form-nueva-noticia" novalidate>
             <div class="campo">
               <label for="nueva-categoria">Categoría</label>
-              <input type="text" id="nueva-categoria" placeholder="Ej: Tecnología" required>
+              <select id="nueva-categoria" required><option value="">Selecciona una categoría</option><option>Tecnología</option><option>Educación</option></select>
             </div>
             <div class="campo">
               <label for="nuevo-autor">Autor</label>
-              <input type="text" id="nuevo-autor" placeholder="Tu nombre" required>
+              <input type="text" id="nuevo-autor" maxlength="100" placeholder="Tu nombre" required>
             </div>
             <div class="campo campo-completo">
               <label for="nuevo-titulo">Título</label>
-              <input type="text" id="nuevo-titulo" placeholder="Título de la noticia" required>
+              <input type="text" id="nuevo-titulo" maxlength="220" placeholder="Título de la noticia" required>
             </div>
             <div class="campo campo-completo">
               <label for="nuevo-resumen">Resumen</label>
-              <textarea id="nuevo-resumen" placeholder="Resumen breve de la noticia" required></textarea>
+              <textarea id="nuevo-resumen" maxlength="600" placeholder="Resumen breve de la noticia" required></textarea>
             </div>
             <div class="campo campo-completo">
-              <button type="submit" class="btn">Publicar noticia</button>
+              <label for="nuevo-contenido">Contenido completo (máximo 12000 caracteres)</label>
+              <textarea id="nuevo-contenido" maxlength="12000" required></textarea>
+              <button type="submit" class="btn">Guardar en este navegador</button>
             </div>
           </form>
         </div>
