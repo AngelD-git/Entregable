@@ -116,8 +116,24 @@ function truncar(texto, longitud) {
   return texto.length > longitud ? texto.slice(0, longitud).trim() + "…" : texto;
 }
 
+/* Solo se escapan valores de texto/atributo; las rutas se validan por separado. */
+function escaparHTML(valor) {
+  return String(valor).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function imagenSegura(ruta) {
+  return /^img\/[a-zA-Z0-9_-]+\.(?:png|jpg|jpeg|webp|svg)$/.test(ruta) ? ruta : "img/Imagen-Prueba.png";
+}
+function noticiaParaHTML(n) {
+  const segura = {};
+  for (const campo of ["titulo", "resumen", "contenido", "categoria", "autor", "fecha"]) segura[campo] = escaparHTML(n[campo]);
+  segura.id = encodeURIComponent(String(n.id));
+  segura.imagen = imagenSegura(n.imagen);
+  return segura;
+}
+
 /* Arma una card de noticia; opcionalmente incluye el botón Eliminar (CRUD). */
 function crearTarjetaNoticia(noticia, { mostrarEliminar = false } = {}) {
+  noticia = noticiaParaHTML({ ...noticia, resumen: truncar(noticia.resumen, 110) });
   const articulo = document.createElement("article");
   articulo.className = "card";
   articulo.innerHTML = `
@@ -127,7 +143,7 @@ function crearTarjetaNoticia(noticia, { mostrarEliminar = false } = {}) {
     <div class="card-cuerpo">
       <span class="card-categoria">${noticia.categoria}</span>
       <h3><a href="detalle.html?id=${noticia.id}">${noticia.titulo}</a></h3>
-      <p>${truncar(noticia.resumen, 110)}</p>
+      <p>${noticia.resumen}</p>
       <div class="card-acciones">
         <a class="btn" href="detalle.html?id=${noticia.id}">Leer noticia</a>
         ${mostrarEliminar ? `<button class="btn peligro" data-eliminar="${noticia.id}">Eliminar</button>` : ""}
