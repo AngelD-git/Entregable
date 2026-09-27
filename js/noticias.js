@@ -3,7 +3,8 @@ let paginaActual = 1;
 let categoriaActual = "todas";
 let textoBusqueda = "";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  if (!await cargarCatalogo()) return;
   const parametros = new URLSearchParams(window.location.search);
   const categoriaUrl = parametros.get("categoria");
   if (categoriaUrl) categoriaActual = categoriaUrl;
