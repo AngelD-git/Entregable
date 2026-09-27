@@ -1,1 +1,4 @@
-
+<<< INICIO CONTENIDO | ETAPA 02 | .gitignore >>>
+node_modules/
+__pycache__/
+test-results/
