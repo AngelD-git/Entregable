@@ -18,19 +18,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 /* Pinta el artículo y conecta favoritos + copiar enlace. */
 function renderizarArticulo(noticia, contenedor) {
+  const texto = noticiaParaHTML(noticia);
   contenedor.innerHTML = `
-    <h1>${noticia.titulo}</h1>
-    <p class="detalle-bajada">${noticia.resumen}</p>
+    <h1>${texto.titulo}</h1>
+    <p class="detalle-bajada">${texto.resumen}</p>
     <div class="detalle-imagen">
-      <img src="${noticia.imagen}" alt="${noticia.titulo}">
+      <img src="${texto.imagen}" alt="${texto.titulo}">
     </div>
     <div class="btn-fila">
       <button class="btn secundario" id="btn-compartir">Compartir</button>
       <button class="btn" id="btn-favorito">${esFavorito(noticia.id) ? "Quitar de favoritos" : "Agregar a favoritos"}</button>
     </div>
     <div class="detalle-cuerpo">
-      <p>${noticia.contenido}</p>
-      <p class="detalle-firma">${noticia.autor} — ${formatearFecha(noticia.fecha)}</p>
+      <p>${texto.contenido}</p>
+      <p class="detalle-firma">${texto.autor} — ${formatearFecha(noticia.fecha)}</p>
     </div>
   `;
 
@@ -64,12 +65,13 @@ function renderizarRelacionados(noticiaActual) {
 
   relacionadas.forEach((noticia) => {
     const div = document.createElement("a");
-    div.href = `detalle.html?id=${noticia.id}`;
+    div.href = `detalle.html?id=${encodeURIComponent(String(noticia.id))}`;
+    const texto = noticiaParaHTML({ ...noticia, resumen: truncar(noticia.resumen, 90) });
     div.className = "card-horizontal";
     div.innerHTML = `
-      <img src="${noticia.imagen}" alt="${noticia.titulo}">
-      <h4>${noticia.titulo}</h4>
-      <p>${truncar(noticia.resumen, 90)}</p>
+      <img src="${texto.imagen}" alt="${texto.titulo}">
+      <h4>${texto.titulo}</h4>
+      <p>${texto.resumen}</p>
     `;
     contenedor.appendChild(div);
   });
