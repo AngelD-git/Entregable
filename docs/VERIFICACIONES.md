@@ -25,3 +25,9 @@ Servidor `python -m http.server 8000 --bind 127.0.0.1` desde padre; urllib.reque
 `node smoke.cjs 4`: PASS. JSON local malformado, entradas null/objeto/número, esquema inválido y fallo simulado de cuota; sin excepción no controlada. Sigue pasando carga/reintento HTTP.
 
 `git diff --check` y `node --check js/*.js` (cada archivo): correctos.
+
+## S5 05/20
+
+`node smoke.cjs 5`: PASS. Título, resumen y cuerpo con <img onerror> se muestran como texto sin ejecución ni atributos onerror en listado/detalle. URL javascript rechazada. Se corrigió una referencia del título detectada por la primera prueba antes del commit.
+
+`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
