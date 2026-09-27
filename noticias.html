@@ -46,10 +46,12 @@
     <div class="layout-con-sidebar">
 
       <section>
+        <h1>Noticias</h1>
+        <p id="estado-resultados" role="status" aria-live="polite" tabindex="-1"></p>
         <!-- Grilla y paginación se llenan con JavaScript. -->
         <div class="grilla-noticias" id="grilla-noticias"></div>
 
-        <nav class="paginacion" id="paginacion"></nav>
+        <nav class="paginacion" id="paginacion" aria-label="Páginas de noticias"></nav>
 
         <!-- Mini CRUD: Filtro de noticias del usuario. -->
         <div class="panel-admin">
