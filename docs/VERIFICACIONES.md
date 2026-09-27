@@ -43,3 +43,9 @@ Servidor `python -m http.server 8000 --bind 127.0.0.1` desde padre; urllib.reque
 `node smoke.cjs 7`: PASS. 6/3 tarjetas, página activa accesible, Siguiente deshabilitado al final, límite 999 ajustado a 2 y foco en resumen de resultados.
 
 `git diff --check` y `node --check js/*.js` (cada archivo): correctos.
+
+## S5 08/20
+
+`node smoke.cjs 8`: PASS. Formulario vacío rechazado con aria-invalid; creación por interfaz, recarga y apertura del detalle conservan cuerpo independiente. Categorías cerradas y límites aplicados también en API.
+
+`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
