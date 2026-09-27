@@ -95,5 +95,10 @@ function crearNoticia(noticia) {
   return guardarLista(CLAVES.noticias, [nueva, ...obtenerCreadas()]) ? id : false;
 }
 function eliminarNoticiaCreada(id) {
-  return guardarLista(CLAVES.noticias, obtenerCreadas().filter(n => String(n.id) !== String(id)));
+  const creadas = obtenerCreadas();
+  if (!String(id).startsWith("u") || !creadas.some(n => String(n.id) === String(id))) return false;
+  if (!guardarLista(CLAVES.noticias, creadas.filter(n => String(n.id) !== String(id)))) return false;
+  const favoritos = leerLista(CLAVES.favoritos).filter(f => String(f) !== String(id));
+  if (!guardarLista(CLAVES.favoritos, favoritos)) avisarAlmacenamiento("Noticia eliminada. No se pudo limpiar su favorito; los favoritos sin noticia no se muestran.");
+  return true;
 }
