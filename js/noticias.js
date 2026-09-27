@@ -127,25 +127,45 @@ function inicializarBuscador() {
 /* Mini CRUD: crea una noticia y recarga el listado. */
 function inicializarFormularioNuevaNoticia() {
   const formulario = document.getElementById("form-nueva-noticia");
+  formulario.querySelectorAll("input, textarea, select").forEach(c => {
+    c.setAttribute("aria-describedby", "estado-alta");
+    c.addEventListener("input", () => { c.removeAttribute("aria-invalid"); document.getElementById("estado-alta").textContent = ""; });
+  });
   formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
     const categoria = document.getElementById("nueva-categoria").value.trim();
     const autor = document.getElementById("nuevo-autor").value.trim();
     const titulo = document.getElementById("nuevo-titulo").value.trim();
     const resumen = document.getElementById("nuevo-resumen").value.trim();
+    const contenido = document.getElementById("nuevo-contenido").value.trim();
+    const estado = document.getElementById("estado-alta");
+    const campos = [...formulario.querySelectorAll("input, textarea, select")];
+    const invalido = campos.find(c => !c.value.trim() || !c.checkValidity());
+    campos.forEach(c => c.setAttribute("aria-invalid", String(!c.value.trim() || !c.checkValidity())));
+    if (invalido || !CATEGORIAS.includes(categoria)) {
+      estado.textContent = "Completa los campos y respeta los límites indicados.";
+      (invalido || campos[0]).focus();
+      return;
+    }
 
     if (!categoria || !autor || !titulo || !resumen) return;
 
-    crearNoticia({
+    const id = crearNoticia({
       categoria,
       autor,
       titulo,
       resumen,
-      contenido: resumen,
+      contenido,
       fecha: new Date().toISOString().slice(0, 10),
     });
 
+    if (!id) { estado.textContent = "No se guardó la noticia. Revisa los campos y el aviso de almacenamiento."; return; }
+    estado.textContent = "Noticia guardada solo en este navegador.";
     formulario.reset();
+    categoriaActual = "todas";
+    textoBusqueda = "";
+    document.getElementById("buscador").value = "";
+    sincronizarFiltros();
     paginaActual = 1;
     renderizarListado();
   });
