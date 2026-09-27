@@ -37,3 +37,9 @@ Servidor `python -m http.server 8000 --bind 127.0.0.1` desde padre; urllib.reque
 `node smoke.cjs 6`: PASS. URL Educación: 3 tarjetas y filtro activo; búsqueda sin resultados: 0 tarjetas; categoría inválida: catálogo completo. Se suprime Colombia por falta de registros y se conectan enlaces de otras vistas.
 
 `git diff --check` y `node --check js/*.js` (cada archivo): correctos.
+
+## S5 07/20
+
+`node smoke.cjs 7`: PASS. 6/3 tarjetas, página activa accesible, Siguiente deshabilitado al final, límite 999 ajustado a 2 y foco en resumen de resultados.
+
+`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
