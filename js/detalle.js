@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  if (!await cargarCatalogo()) return;
   const parametros = new URLSearchParams(window.location.search);
   const id = parametros.get("id");
   const noticia = obtenerNoticiaPorId(id);
