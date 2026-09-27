@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", renderizarFavoritos);
+document.addEventListener("DOMContentLoaded", async () => {
+  if (await cargarCatalogo()) renderizarFavoritos();
+});
 
 /* Muestra las noticias cuyos ids están guardados en localStorage. */
 function renderizarFavoritos() {
