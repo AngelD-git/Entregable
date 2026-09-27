@@ -2,4 +2,4 @@
 
 Portal de noticias de tecnología y educación. Sitio estático en HTML, CSS y JavaScript (sin backend).
 
-Actualizacion 2026
+Actualizacion 26 de Septiembre 2026
