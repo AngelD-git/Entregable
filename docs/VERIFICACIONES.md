@@ -49,3 +49,9 @@ Servidor `python -m http.server 8000 --bind 127.0.0.1` desde padre; urllib.reque
 `node smoke.cjs 8`: PASS. Formulario vacío rechazado con aria-invalid; creación por interfaz, recarga y apertura del detalle conservan cuerpo independiente. Categorías cerradas y límites aplicados también en API.
 
 `git diff --check` y `node --check js/*.js` (cada archivo): correctos.
+
+## S5 09/20
+
+`node smoke.cjs 9`: PASS. API rechaza baja base; cancelar conserva entrada; confirmar elimina noticia local y su favorito; catálogo conserva nueve registros.
+
+`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
