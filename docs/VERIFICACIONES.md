@@ -2,56 +2,11 @@
 
 Resultados reales registrados antes de cada commit. Las pruebas posteriores no se atribuyen a estados anteriores.
 
-## S5 01/20
-
-Comparación ZIP/extracción con Python zipfile: 17/17 idénticos. Lectura pypdf: 7 páginas; cotejo manual del inventario y requisitos de páginas 2-6.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 02/20
-
-Servidor `python -m http.server 8000 --bind 127.0.0.1` desde padre; urllib.request comprobó index.html y noticias.html en /Entregable-main/: HTTP 200 en ambos.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 03/20
-
-`node smoke.cjs` (herramienta de trabajo externa, Chromium): PASS, subdirectorio /Entregable-main/, 9 registros, 6 tarjetas, HTTP 500 y recuperación con Reintentar, sin excepciones JS. Ejecución del navegador autorizada tras EPERM del aislamiento.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 04/20
-
-`node smoke.cjs 4`: PASS. JSON local malformado, entradas null/objeto/número, esquema inválido y fallo simulado de cuota; sin excepción no controlada. Sigue pasando carga/reintento HTTP.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 05/20
-
-`node smoke.cjs 5`: PASS. Título, resumen y cuerpo con <img onerror> se muestran como texto sin ejecución ni atributos onerror en listado/detalle. URL javascript rechazada. Se corrigió una referencia del título detectada por la primera prueba antes del commit.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 06/20
-
-`node smoke.cjs 6`: PASS. URL Educación: 3 tarjetas y filtro activo; búsqueda sin resultados: 0 tarjetas; categoría inválida: catálogo completo. Se suprime Colombia por falta de registros y se conectan enlaces de otras vistas.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 07/20
-
-`node smoke.cjs 7`: PASS. 6/3 tarjetas, página activa accesible, Siguiente deshabilitado al final, límite 999 ajustado a 2 y foco en resumen de resultados.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 08/20
-
-`node smoke.cjs 8`: PASS. Formulario vacío rechazado con aria-invalid; creación por interfaz, recarga y apertura del detalle conservan cuerpo independiente. Categorías cerradas y límites aplicados también en API.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
-
-## S5 09/20
-
-`node smoke.cjs 9`: PASS. API rechaza baja base; cancelar conserva entrada; confirmar elimina noticia local y su favorito; catálogo conserva nueve registros.
-
-`git diff --check` y `node --check js/*.js` (cada archivo): correctos.
+Durante el proceso de verificación se comparó el archivo ZIP original con su contenido extraído mediante Python (zipfile), obteniéndose coincidencia en los 17 archivos analizados. Asimismo, se revisó el documento de orientaciones con pypdf y se cotejaron manualmente el inventario del proyecto y los requisitos correspondientes. Posteriormente, se ejecutó el proyecto mediante un servidor HTTP local con python -m http.server, comprobando que index.html y noticias.html respondieran correctamente con estado HTTP 200.
+Las pruebas funcionales se realizaron mediante una herramienta externa de verificación basada en Chromium (smoke.cjs). Estas comprobaron la carga correcta de nueve registros y la visualización de seis tarjetas por página, además del manejo de errores HTTP mediante un mecanismo de recuperación con el botón “Reintentar”, sin generar excepciones JavaScript no controladas. También se evaluó el comportamiento frente a archivos JSON malformados, valores nulos o de tipo incorrecto, registros que no cumplían el esquema esperado y fallos simulados de almacenamiento, verificándose que la aplicación continuara operando de forma controlada.
+De igual manera, se efectuaron pruebas de seguridad sobre los campos de título, resumen y contenido utilizando entradas potencialmente peligrosas, como etiquetas <img onerror>. Estas se mostraron como texto sin ejecutar código ni incorporar atributos maliciosos en las vistas de listado y detalle. También se comprobó el rechazo de URLs de tipo javascript:.
+En cuanto a la navegación y filtrado, se verificó el funcionamiento de la categoría Educación, obteniéndose tres noticias y la correcta identificación del filtro activo. La búsqueda sin coincidencias produjo un listado vacío con el mensaje correspondiente, mientras que una categoría inválida permitió recuperar el catálogo completo. Durante este proceso también se eliminó la categoría Colombia debido a la ausencia de registros asociados y se ajustaron los enlaces entre las diferentes vistas.
+La paginación fue igualmente comprobada, verificándose la distribución de seis noticias en la primera página y tres en la segunda, la identificación accesible de la página activa, la desactivación del botón “Siguiente” al llegar al final y el ajuste automático de valores de página fuera del rango permitido. Además, se comprobó que el foco se trasladara adecuadamente al resumen de resultados después de realizar cambios de página.
+Respecto al mini CRUD, se verificó que un formulario vacío fuera rechazado y marcado mediante aria-invalid, y que una noticia creada desde la interfaz persistiera después de recargar la página y pudiera abrirse posteriormente en la vista de detalle conservando su contenido. Asimismo, se confirmaron las restricciones de categorías y los límites establecidos para los diferentes campos.
+Finalmente, se comprobó el proceso de eliminación de noticias creadas localmente. El sistema impide eliminar los registros pertenecientes al catálogo base, permite cancelar la operación sin modificar la información y, al confirmar la eliminación, elimina tanto la noticia local como su referencia en favoritos. Tras estas operaciones, el catálogo base mantiene sus nueve registros originales.
+De forma complementaria, durante las distintas verificaciones se ejecutaron git diff --check y node --check js/*.js, sin encontrarse errores en los archivos JavaScript revisados.
