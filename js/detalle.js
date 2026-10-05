@@ -24,14 +24,16 @@ function renderizarArticulo(noticia, contenedor) {
     <p class="detalle-bajada">${texto.resumen}</p>
     <div class="detalle-imagen">
       <img src="${texto.imagen}" alt="${texto.titulo}">
+      ${texto.imagenCredito ? `<p class="detalle-credito">${texto.imagenCredito}</p>` : ""}
     </div>
     <div class="btn-fila">
       <button class="btn secundario" id="btn-compartir">Compartir</button>
       <button class="btn" id="btn-favorito">${esFavorito(noticia.id) ? "Quitar de favoritos" : "Agregar a favoritos"}</button>
     </div>
     <div class="detalle-cuerpo">
-      <p>${texto.contenido}</p>
+      ${texto.contenido.split(/\n{2,}/).map((parrafo) => `<p>${parrafo}</p>`).join("")}
       <p class="detalle-firma">${texto.autor} — ${formatearFecha(noticia.fecha)}</p>
+      ${texto.fuenteUrl ? `<p class="detalle-fuente">Fuente original: <a href="${texto.fuenteUrl}" target="_blank" rel="noopener noreferrer">${texto.fuente || "Ver noticia"}</a></p>` : ""}
     </div>
   `;
 
