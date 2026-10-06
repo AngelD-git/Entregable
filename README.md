@@ -1,40 +1,112 @@
-# Infonexia · semana 5
+# Infonexia
 
-Prototipo estático en español, HTML/CSS/JavaScript. No requiere build ni backend.
+Portal de noticias en español desarrollado con [Angular](https://angular.dev) (CLI 21.2.25). Es la migración a Angular del prototipo estático original en HTML, CSS y JavaScript, y mantiene sus funcionalidades: catálogo de noticias, búsqueda y filtros, paginación, favoritos, alta y baja de noticias locales, y formulario de contacto.
 
-## Ejecutar
+> Proyecto académico. No usa backend: los datos base se leen de un archivo JSON y lo que crea el usuario se guarda solo en su navegador.
 
-Desde esta carpeta, con Python 3 instalado:
+## Funcionalidades
 
-```powershell
-python -m http.server 8000 --bind 127.0.0.1
+- **Inicio:** noticias destacadas y formulario de newsletter (demostración, sin envío real).
+- **Noticias:** listado con búsqueda por texto, filtro por categoría, paginación (6 noticias por página) y alta/baja de noticias propias.
+- **Detalle:** artículo completo, noticias relacionadas, favoritos y compartir.
+- **Favoritos:** listado de las noticias marcadas por el usuario.
+- **Nosotros:** información del proyecto.
+- **Contacto:** formulario con validación (demostración, sin envío real).
+- **Accesibilidad:** menú hamburguesa y sidebar de categorías con cierre por Escape, página activa identificada, campos inválidos marcados con `aria-invalid` y avisos accesibles ante errores.
+
+## Requisitos
+
+- [Node.js](https://nodejs.org) (versión LTS compatible con Angular 21)
+- npm (incluido con Node.js)
+- Angular CLI (opcional, se puede usar `npx ng`):
+
+```bash
+npm install -g @angular/cli
 ```
 
-Abrir http://127.0.0.1:8000/index.html y noticias.html. Para probar una ruta de proyecto, ejecutar el servidor desde la carpeta superior y abrir /Entregable-main/index.html. Las rutas de recursos son relativas.
+## Instalación y ejecución
 
-No usar file://: la carga JSON por HTTP será obligatoria. No equivale a un despliegue público.
+```bash
+git clone https://github.com/AngelD-git/Entregable.git
+cd Entregable
+git checkout Angular
+npm install
+ng serve
+```
 
-## Estructura y prueba
+Abrir <http://localhost:4200/>. La aplicación recarga automáticamente al modificar el código.
 
-HTML en raíz; css/style.css; scripts por vista en js/; catálogo en data/noticias.json; recursos en img/. Hay nueve registros base y seis noticias por página. Inicio, Noticias, Nosotros, Favoritos y Contacto forman el menú; detalle.html?id=1 abre un artículo.
+## Scripts disponibles
 
-Las noticias creadas y favoritos pertenecen solo al navegador y origen actuales; cambiar puerto o borrar almacenamiento cambia esos datos. Contacto y newsletter son demostraciones sin envío real. No introducir datos personales sensibles.
+| Comando | Descripción |
+| --- | --- |
+| `ng serve` | Servidor de desarrollo en `http://localhost:4200/` |
+| `ng build` | Compilación de producción en `dist/` |
+| `ng test` | Pruebas unitarias con [Vitest](https://vitest.dev/) |
+| `ng generate component nombre` | Genera un componente nuevo |
 
-Consultar docs/LINEA_BASE.md y docs/VERIFICACIONES.md. GitHub, autores académicos y mockups están pendientes de suministro. Semana 7 (Angular, despliegue y video) queda fuera del alcance.
+## Estructura del proyecto
 
-## Arquitectura y módulos
+```
+Entregable/
+├── docs/        # Documentación: línea base y verificaciones
+├── public/      # Recursos estáticos (imágenes, catálogo JSON)
+├── src/         # Código fuente de la aplicación Angular
+├── tools/       # Utilidades de apoyo al proyecto
+├── angular.json
+├── package.json
+└── tsconfig*.json
+```
 
-- `js/data.js`: carga el catálogo base por `fetch` desde `data/noticias.json`, lo valida (`validarCatalogo`/`noticiaValida`) y expone el mini-CRUD local (`crearNoticia`, `eliminarNoticiaCreada`) sobre `localStorage`.
-- `js/main.js`: menú hamburguesa/sidebar, helpers de favoritos (`obtenerFavoritos`, `esFavorito`, `alternarFavorito`, `eliminarFavorito`), escape de HTML (`escaparHTML`, `imagenSegura`) y construcción de tarjetas (`crearTarjetaNoticia`), usados por todas las vistas.
-- `js/home.js`, `js/noticias.js`, `js/detalle.js`, `js/favoritos.js`, `js/contacto.js`: lógica propia de cada página (destacadas y newsletter; búsqueda, filtros, paginación y alta/baja; artículo y relacionados; listado de favoritos; validación del formulario de contacto, respectivamente).
+Más documentación en [`docs/`](docs/).
 
-## Flujo de datos
+## Datos y persistencia
 
-Las noticias que ve el usuario combinan dos fuentes: `NOTICIAS_BASE` (los nueve registros de `data/noticias.json`, cargados en memoria) y las noticias creadas localmente (`localStorage`, clave `infonexia_noticias_creadas`, con IDs que siempre empiezan por `u`). `obtenerTodasLasNoticias()` las une, mostrando primero las locales. Los favoritos se guardan aparte en `localStorage` (clave `infonexia_favoritos`) como lista de IDs, y se limpian automáticamente si la noticia local asociada se elimina.
+Las noticias que ve el usuario combinan dos fuentes:
+
+1. **Catálogo base:** nueve registros cargados por HTTP desde el archivo JSON de noticias.
+2. **Noticias creadas por el usuario:** guardadas en `localStorage`, con IDs que siempre empiezan por `u`. Se muestran primero en los listados.
+
+Los **favoritos** se guardan aparte en `localStorage`, como lista de IDs, y se limpian automáticamente si se elimina la noticia local asociada.
+
+Consecuencias importantes:
+
+- Las noticias creadas y los favoritos pertenecen solo al navegador y al origen actuales. Cambiar de puerto o borrar el almacenamiento del navegador los elimina.
+- El catálogo base no se puede eliminar; solo las noticias propias.
+
+## Modelo de una noticia
+
+| Campo | Descripción |
+| --- | --- |
+| `id` | Identificador (número en el catálogo base, texto con prefijo `u` en las locales) |
+| `categoria` | Una de las categorías permitidas |
+| `titulo`, `resumen`, `contenido` | Textos con límite de longitud |
+| `imagen` | Ruta de la imagen local |
+| `autor` | Nombre del autor |
+| `fecha` | Fecha con formato `AAAA-MM-DD` y valor real |
+| `fuente`, `fuenteUrl` | Medio de origen y enlace al artículo original |
+| `imagenUrl`, `imagenCredito` | Origen y crédito de la imagen |
 
 ## Validaciones y seguridad
 
-- Los campos editables (título, resumen, contenido, categoría, autor, fecha) se escapan antes de insertarse en el DOM, y las rutas de imagen se restringen a un patrón fijo dentro de `img/`, para mitigar XSS.
-- Cada registro se valida contra un esquema (categoría permitida, límites de longitud por campo, fecha con formato y valor reales) antes de aceptarse, tanto en el catálogo base como en las noticias creadas por el usuario.
-- Las lecturas y escrituras en `localStorage` están protegidas: datos dañados o cuota agotada muestran un aviso accesible en vez de romper la página, y no se sobrescriben hasta que el usuario guarde un cambio válido.
-- El formulario de alta de noticia valida campos vacíos y formato antes de enviar; la eliminación de una noticia local pide confirmación y solo puede operar sobre noticias propias del usuario (ID con prefijo `u`).
+- Los campos editables se tratan como texto y nunca como HTML, y las rutas de imagen se restringen a un patrón fijo, para mitigar ataques XSS.
+- Cada registro se valida (categoría permitida, límites por campo, fecha válida) tanto en el catálogo base como en las noticias creadas por el usuario.
+- Las lecturas y escrituras en `localStorage` están protegidas: si los datos están dañados o se agota la cuota, se muestra un aviso en lugar de romper la página.
+- El formulario de alta rechaza campos vacíos o con formato inválido.
+- Eliminar una noticia pide confirmación y solo es posible sobre noticias propias del usuario.
+
+## Limitaciones conocidas
+
+- **Contacto y newsletter** son demostraciones: no envían datos a ningún servidor. No introducir datos personales sensibles.
+- La baja de noticias opera solo sobre el almacenamiento local; no existe API que valide la propiedad de los registros.
+- No equivale a un despliegue público: no hay autenticación ni base de datos.
+
+## Documentación adicional
+
+- [`docs/LINEA_BASE.md`](docs/LINEA_BASE.md): estado del prototipo original y problemas identificados.
+- [`docs/VERIFICACIONES.md`](docs/VERIFICACIONES.md): pruebas y verificaciones realizadas.
+
+## Recursos
+
+- [Angular CLI: referencia de comandos](https://angular.dev/tools/cli)
+- [Documentación de Angular](https://angular.dev)

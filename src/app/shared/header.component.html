@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="contenedor">
+    <div class="marca-grupo">
+      <!-- Event binding: (click). Attribute binding: [attr.aria-expanded]. -->
+      <button
+        type="button"
+        class="menu-hamburguesa"
+        aria-label="Abrir menú de categorías"
+        [attr.aria-expanded]="ui.sidebarAbierto()"
+        (click)="ui.alternarSidebar()"
+      >☰</button>
+      <a routerLink="/" class="marca">Infonexia</a>
+    </div>
+    <nav class="nav-principal">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Inicio</a></li>
+        <li><a routerLink="/noticias" routerLinkActive="activo">Noticias</a></li>
+        <li><a routerLink="/nosotros" routerLinkActive="activo">Nosotros</a></li>
+        <li><a routerLink="/favoritos" routerLinkActive="activo">Favoritos</a></li>
+        <li><a routerLink="/contacto" routerLinkActive="activo">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

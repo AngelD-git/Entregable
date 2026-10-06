@@ -1,0 +1,70 @@
+<div class="layout-con-sidebar">
+  <section>
+    <h1>Noticias</h1>
+    <p #estado role="status" aria-live="polite" tabindex="-1">
+      {{ filtradas().length }} noticias. Página {{ pagina() }} de {{ totalPaginas() }}.
+    </p>
+
+    <div class="grilla-noticias">
+      @for (noticia of visibles(); track noticia.id) {
+        <app-noticia-card [noticia]="noticia" [mostrarEliminar]="esLocal(noticia)" (eliminar)="eliminar($event)" />
+      } @empty {
+        <p class="estado-vacio">No se encontraron noticias con los filtros seleccionados.</p>
+      }
+    </div>
+
+    <nav class="paginacion" aria-label="Páginas de noticias">
+      <button type="button" [disabled]="pagina() === 1" (click)="irAPagina(pagina() - 1)">Anterior</button>
+      @for (p of paginas(); track p) {
+        <button
+          type="button"
+          [class.activo]="p === pagina()"
+          [attr.aria-current]="p === pagina() ? 'page' : null"
+          [attr.aria-label]="'Página ' + p"
+          (click)="irAPagina(p)"
+        >{{ p }}</button>
+      }
+      <button type="button" [disabled]="pagina() === totalPaginas()" (click)="irAPagina(pagina() + 1)">Siguiente</button>
+    </nav>
+
+    <!-- Mini CRUD: crear noticias (se guardan solo en este navegador). -->
+    <div class="panel-admin">
+      <h2>Crear una noticia local</h2>
+      <p>Solo se guarda en este navegador y origen. No modifica el catálogo común ni se publica en Internet.</p>
+      <p role="status" tabindex="-1">{{ estadoAlta() }}</p>
+
+      <form class="formulario" [formGroup]="formulario" (ngSubmit)="guardar()" novalidate>
+        <div class="campo">
+          <label for="nueva-categoria">Categoría</label>
+          <select id="nueva-categoria" formControlName="categoria" [attr.aria-invalid]="campoInvalido('categoria')">
+            <option value="">Selecciona una categoría</option>
+            @for (c of categorias; track c) {
+              <option [value]="c">{{ c }}</option>
+            }
+          </select>
+        </div>
+        <div class="campo">
+          <label for="nuevo-autor">Autor</label>
+          <input id="nuevo-autor" type="text" formControlName="autor" [maxlength]="limites.autor"
+                 placeholder="Tu nombre" [attr.aria-invalid]="campoInvalido('autor')">
+        </div>
+        <div class="campo campo-completo">
+          <label for="nuevo-titulo">Título</label>
+          <input id="nuevo-titulo" type="text" formControlName="titulo" [maxlength]="limites.titulo"
+                 placeholder="Título de la noticia" [attr.aria-invalid]="campoInvalido('titulo')">
+        </div>
+        <div class="campo campo-completo">
+          <label for="nuevo-resumen">Resumen</label>
+          <textarea id="nuevo-resumen" formControlName="resumen" [maxlength]="limites.resumen"
+                    placeholder="Resumen breve de la noticia" [attr.aria-invalid]="campoInvalido('resumen')"></textarea>
+        </div>
+        <div class="campo campo-completo">
+          <label for="nuevo-contenido">Contenido completo (máximo 12000 caracteres)</label>
+          <textarea id="nuevo-contenido" formControlName="contenido" [maxlength]="limites.contenido"
+                    [attr.aria-invalid]="campoInvalido('contenido')"></textarea>
+          <button type="submit" class="btn">Guardar en este navegador</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

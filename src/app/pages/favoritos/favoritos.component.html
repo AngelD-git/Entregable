@@ -1,0 +1,19 @@
+<h1 class="favoritos-titulo">Favoritos</h1>
+<p class="favoritos-contador">
+  @if (lista().length === 1) {
+    Tienes 1 noticia guardada en tu lista personal.
+  } @else {
+    Tienes {{ lista().length }} noticias guardadas en tu lista personal.
+  }
+</p>
+
+<div class="grilla-noticias">
+  @for (noticia of lista(); track noticia.id) {
+    <app-noticia-card [noticia]="noticia" [mostrarQuitar]="true" (quitar)="favoritos.quitar($event)" />
+  } @empty {
+    <p class="estado-vacio">
+      Aún no has guardado noticias en favoritos.
+      <a routerLink="/noticias">Explora el catálogo</a>.
+    </p>
+  }
+</div>
