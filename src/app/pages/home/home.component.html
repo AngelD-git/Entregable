@@ -1,0 +1,29 @@
+<section class="hero">
+  <h1>Noticias Globales: Lo último en Tecnología y Educación</h1>
+  <p>Bienvenido a Infonexia, tu portal informativo de referencia sobre actualidad en tecnología y educación.</p>
+</section>
+
+<section class="seccion" id="destacadas">
+  <h2>Te puede interesar...</h2>
+  <div class="grilla-noticias">
+    @for (noticia of destacadas(); track noticia.id) {
+      <app-noticia-card [noticia]="noticia" />
+    }
+  </div>
+</section>
+
+<section class="newsletter">
+  <h3>¿Quieres recibir el resumen semanal de noticias?</h3>
+  <p>Suscríbete a nuestro boletín y recibe lo más destacado de tecnología y educación directo en tu correo.</p>
+  <form class="form-inline" (ngSubmit)="suscribirse()" novalidate>
+    <input
+      type="email"
+      name="correo"
+      placeholder="Ingrese su correo"
+      [(ngModel)]="correo"
+      [class.invalido]="!exito() && mensaje() !== ''"
+    >
+    <button type="submit" class="btn">Suscribirme</button>
+  </form>
+  <p class="mensaje-error" [style.color]="exito() ? '#1e5a30' : null">{{ mensaje() }}</p>
+</section>

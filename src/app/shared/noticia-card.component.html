@@ -1,0 +1,19 @@
+<article class="card">
+  <a [routerLink]="['/noticia', noticia().id]">
+    <img [src]="noticia().imagen" [alt]="noticia().titulo" (error)="alFallar($event)">
+  </a>
+  <div class="card-cuerpo">
+    <span class="card-categoria">{{ noticia().categoria }}</span>
+    <h3><a [routerLink]="['/noticia', noticia().id]">{{ noticia().titulo }}</a></h3>
+    <p>{{ noticia().resumen | truncar: 110 }}</p>
+    <div class="card-acciones">
+      <a class="btn" [routerLink]="['/noticia', noticia().id]">Leer noticia</a>
+      @if (mostrarEliminar()) {
+        <button type="button" class="btn peligro" (click)="eliminar.emit(noticia().id)">Eliminar</button>
+      }
+      @if (mostrarQuitar()) {
+        <button type="button" class="btn peligro" (click)="quitar.emit(noticia().id)">Eliminar</button>
+      }
+    </div>
+  </div>
+</article>
