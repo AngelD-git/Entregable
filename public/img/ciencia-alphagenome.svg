@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#14233f"/>
+<g fill="none" stroke-width="15"><path d="M320 100C700 160 300 280 680 400" stroke="#6fdbd2"/><path d="M680 100C300 160 700 280 320 400" stroke="#be9fff"/></g>
+<g stroke="#e6e8ff" stroke-width="8"><path d="M365 115H635M425 155H575M465 195H535M430 235H570M390 275H610M370 315H630M410 355H590M450 390H550"/></g>
+<text x="60" y="65" fill="#8de6d2" font-family="Arial,sans-serif" font-size="22">GENÓMICA + INTELIGENCIA ARTIFICIAL</text>
+<text x="60" y="510" fill="white" font-family="Arial,sans-serif" font-size="45">AlphaGenome</text><text x="60" y="552" fill="#c4d8e7" font-family="Arial,sans-serif" font-size="21">ADN y regulación genética · Ilustración conceptual</text>
+</svg>

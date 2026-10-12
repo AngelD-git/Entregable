@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+<defs><linearGradient id="bg"><stop stop-color="#091c35"/><stop offset="1" stop-color="#185c75"/></linearGradient></defs>
+<rect width="1000" height="600" fill="url(#bg)"/>
+<g fill="none" stroke-width="26" stroke-linecap="round"><path d="M280 330C180 160 510 110 460 290S650 480 720 230" stroke="#61dfc0"/><path d="M295 180C370 470 590 390 535 210S760 150 735 345" stroke="#ffcf77"/></g>
+<g fill="#fff"><circle cx="280" cy="330" r="22"/><circle cx="460" cy="290" r="22"/><circle cx="720" cy="230" r="22"/><circle cx="535" cy="210" r="22"/></g>
+<text x="60" y="72" fill="#8de6d2" font-family="Arial,sans-serif" font-size="22">CIENCIA + INTELIGENCIA ARTIFICIAL</text>
+<text x="60" y="515" fill="white" font-family="Arial,sans-serif" font-size="45">AlphaFold 3</text><text x="60" y="555" fill="#c4d8e7" font-family="Arial,sans-serif" font-size="21">Interacciones moleculares · Ilustración conceptual</text>
+</svg>

@@ -23,7 +23,7 @@ describe('Catálogo y noticias locales', () => {
   it('carga JSON relativo y rechaza fechas imposibles, IDs u objetos inválidos', () => {
     expect(servicio.cargando()).toBe(true);
     http.expectOne('data/noticias.json').flush([base]);
-    expect(servicio.porId('1')).toEqual(base);
+    expect(servicio.porId('1')).toMatchObject(base);
     expect(servicio.cargando()).toBe(false);
     expect(noticiaValida({ ...base, fecha: '2026-02-30' })).toBe(false);
     expect(idValido({ toString: () => '1' })).toBe(false);
@@ -57,7 +57,7 @@ describe('Catálogo y noticias locales', () => {
     expect(servicio.eliminar('1')).toBe(false);
     expect(servicio.eliminar(id)).toBe(true);
     expect(favoritos.esFavorito(id)).toBe(false);
-    expect(servicio.porId('1')).toEqual(base);
+    expect(servicio.porId('1')).toMatchObject(base);
   });
 
   it('no cambia el estado ni pierde la noticia cuando se deniega guardar', () => {

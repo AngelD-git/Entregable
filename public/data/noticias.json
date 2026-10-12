@@ -27,7 +27,7 @@
     "categoria": "Tecnología",
     "titulo": "Bill Gates destaca el potencial de la IA para ampliar la salud, el aprendizaje y la innovación",
     "resumen": "En Gates Notes, Gates propone extender los beneficios de la IA con apoyo a profesionales, acceso equitativo y salvaguardas.",
-    "contenido": "En su ensayo del 26 de agosto de 2026, Bill Gates defiende que la IA puede mejorar el acceso a servicios y acelerar la innovación. Su postura es un optimismo condicionado: maximizar beneficios y reducir daños, con especial atención a quienes tienen menos recursos (Gates, 2026a).\n\nEntre las aplicaciones positivas destaca el apoyo a profesionales sanitarios, la comprensión de resultados médicos y el aprendizaje. En una publicación del 21 de enero describió una iniciativa con OpenAI orientada a llevar herramientas de IA a 1.000 clínicas de atención primaria africanas y sus comunidades para 2028. Es una meta de implementación, no un resultado ya alcanzado (Gates, 2026b).\n\nUna actualización posterior de la fundación, del 14 de septiembre, anunció planes de invertir al menos 1.000 millones de dólares durante dos años en acceso equitativo a IA. Este anuncio complementa Gates Notes; no significa que el dinero ya se haya ejecutado (Gates Foundation, 2026).",
+    "contenido": "En su ensayo del 26 de agosto de 2026, Bill Gates defiende que la IA puede mejorar el acceso a servicios y acelerar la innovación. Su postura es un optimismo condicionado: maximizar beneficios y reducir daños, con especial atención a quienes tienen menos recursos (Gates, 2026b).\n\nEntre las aplicaciones positivas destaca el apoyo a profesionales sanitarios, la comprensión de resultados médicos y el aprendizaje. En una publicación del 21 de enero describió una iniciativa con OpenAI orientada a llevar herramientas de IA a 1.000 clínicas de atención primaria africanas y sus comunidades para 2028. Es una meta de implementación, no un resultado ya alcanzado (Gates, 2026a).\n\nUna actualización posterior de la fundación, del 14 de septiembre, anunció planes de invertir al menos 1.000 millones de dólares durante dos años en acceso equitativo a IA. Este anuncio complementa Gates Notes; no significa que el dinero ya se haya ejecutado (Gates Foundation, 2026).",
     "imagen": "img/noticia-2.jpg",
     "autor": "Redacción Infonexia",
     "fecha": "2026-09-14",
@@ -37,25 +37,25 @@
     "imagenCredito": "Imagen original de la fuente (Negocios.com)",
     "referencias": [
       {
-        "autor": "Gates, B.",
-        "fecha": "2026a, 26 de agosto",
-        "titulo": "The turbulent AI era is here. The choices we make now are critical.",
-        "url": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make",
-        "sitio": "Gates Notes"
-      },
-      {
-        "autor": "Gates, B.",
-        "fecha": "2026b, 21 de enero",
-        "titulo": "Expanding access to health care through AI",
-        "url": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/expanding-access-to-health-care-through-ai",
-        "sitio": "Gates Notes"
-      },
-      {
         "autor": "Gates Foundation",
         "fecha": "2026, 14 de septiembre",
         "titulo": "Gates Foundation commits US$1 billion to help build and deliver equitable AI that improves health and expands opportunity",
         "url": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/09/goalkeepers-report-equitable-ai",
         "sitio": ""
+      },
+      {
+        "autor": "Gates, B.",
+        "fecha": "2026a, 21 de enero",
+        "titulo": "Expanding access to health care through AI",
+        "url": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/expanding-access-to-health-care-through-ai",
+        "sitio": "Gates Notes"
+      },
+      {
+        "autor": "Gates, B.",
+        "fecha": "2026b, 26 de agosto",
+        "titulo": "The turbulent AI era is here. The choices we make now are critical.",
+        "url": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make",
+        "sitio": "Gates Notes"
       }
     ]
   },
@@ -74,18 +74,18 @@
     "imagenCredito": "Ilustración editorial original de Infonexia; no es una fotografía del acontecimiento.",
     "referencias": [
       {
-        "autor": "Bloomberg",
-        "fecha": "2025, 26 de octubre",
-        "titulo": "“20 PhDs” In the time of one: How AI is changing college [Video]",
-        "url": "https://www.youtube.com/watch?v=bpc0QOAohl8",
-        "sitio": "YouTube"
-      },
-      {
         "autor": "Arizona State University",
         "fecha": "s. f.",
         "titulo": "Biography and curriculum vitae",
         "url": "https://www.president.asu.edu/the-president/biography",
         "sitio": ""
+      },
+      {
+        "autor": "Bloomberg",
+        "fecha": "2025, 26 de octubre",
+        "titulo": "“20 PhDs” In the time of one: How AI is changing college [Video]",
+        "url": "https://www.youtube.com/watch?v=bpc0QOAohl8",
+        "sitio": "YouTube"
       }
     ]
   },
@@ -254,7 +254,8 @@
         "url": "https://www.nobelprize.org/prizes/chemistry/2024/press-release/",
         "sitio": ""
       }
-    ]
+    ],
+    "cienciaIA": true
   },
   {
     "id": 11,
@@ -276,7 +277,8 @@
         "url": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
         "sitio": "Google DeepMind"
       }
-    ]
+    ],
+    "cienciaIA": true
   },
   {
     "id": 12,
@@ -298,7 +300,8 @@
         "url": "https://news.mit.edu/2023/using-ai-scientists-combat-drug-resistant-infections-0525",
         "sitio": "MIT News"
       }
-    ]
+    ],
+    "cienciaIA": true
   },
   {
     "id": 13,
@@ -320,7 +323,8 @@
         "url": "https://actu.epfl.ch/news/epfl-and-deepmind-use-ai-to-control-plasmas-for-nu/",
         "sitio": "EPFL"
       }
-    ]
+    ],
+    "cienciaIA": true
   },
   {
     "id": 14,
@@ -342,6 +346,7 @@
         "url": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/",
         "sitio": "Google DeepMind"
       }
-    ]
+    ],
+    "cienciaIA": true
   }
 ]

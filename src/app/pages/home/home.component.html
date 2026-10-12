@@ -4,6 +4,14 @@
   <a class="btn" routerLink="/noticias">Explorar noticias</a>
 </section>
 
+<section class="seccion" aria-labelledby="ciencia-titulo">
+  <h2 id="ciencia-titulo">Ciencia con IA: avances que abren posibilidades</h2>
+  <p>Investigación en instituciones de referencia. Cada artículo distingue los resultados, las posibilidades y los límites, con citas y referencias.</p>
+  <div class="grilla-noticias">
+    @for (noticia of cienciaIA(); track noticia.id) { <app-noticia-card [noticia]="noticia" /> }
+  </div>
+</section>
+
 <section class="seccion" id="destacadas">
   <h2>Te puede interesar...</h2>
   <div class="grilla-noticias">

@@ -17,6 +17,7 @@ export class HomeComponent {
 
   /** Las 3 primeras noticias del catálogo. */
   protected readonly destacadas = computed(() => this.noticias.todas().slice(0, 3));
+  protected readonly cienciaIA = computed(() => this.noticias.todas().filter((n) => n.cienciaIA === true));
 
   // Boletín: [(ngModel)] = binding bidireccional con la caja de texto.
   protected correo = '';

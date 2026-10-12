@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#12324c"/><circle cx="660" cy="160" r="62" fill="#ffd17a"/>
+<g fill="#c7e9f3"><circle cx="355" cy="220" r="62"/><circle cx="435" cy="182" r="85"/><circle cx="520" cy="225" r="60"/><rect x="300" y="215" width="275" height="85" rx="40"/></g>
+<g fill="none" stroke-width="6"><path d="M260 395Q450 255 730 330" stroke="#64ddbf"/><path d="M260 395Q450 325 730 405" stroke="#8bbdff"/><path d="M260 395Q450 420 730 475" stroke="#b99dff"/></g>
+<text x="60" y="65" fill="#8de6d2" font-family="Arial,sans-serif" font-size="22">METEOROLOGÍA + INTELIGENCIA ARTIFICIAL</text>
+<text x="60" y="515" fill="white" font-family="Arial,sans-serif" font-size="45">GenCast</text><text x="60" y="555" fill="#c4d8e7" font-family="Arial,sans-serif" font-size="21">Escenarios del tiempo · Ilustración conceptual</text>
+</svg>

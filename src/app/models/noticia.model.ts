@@ -20,6 +20,7 @@ export interface Noticia {
   imagenUrl?: string;
   imagenCredito?: string;
   referencias?: Referencia[];
+  cienciaIA?: boolean;
 }
 
 /** Referencia bibliográfica APA de una fuente pública. */
