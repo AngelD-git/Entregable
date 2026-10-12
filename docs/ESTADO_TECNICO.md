@@ -1,6 +1,6 @@
 # Matriz técnica
 
-Base inspeccionada originalmente: bc97766. Durante la sesión se incorporaron aaa6a9f y 0409a01 (actualizacion 1/2), presentes también en origin/main; se preservan. Mejoras posteriores se registran aparte. Estado local validado el 12/10/2026.
+Base inspeccionada originalmente: bc97766. Durante la sesión se incorporaron aaa6a9f, 0409a01 y 0ff70bd (actualizacion 1/2/3), presentes también en origin/main; se preservan. El árbol quedó limpio antes de la revisión final; los cambios ya integrados se preservan y las correcciones posteriores se registran aparte. Estado local validado el 12/10/2026.
 
 | ID | Estado | Evidencia |
 |---|---|---|
@@ -22,7 +22,7 @@ Base inspeccionada originalmente: bc97766. Durante la sesión se incorporaron aa
 | R16 | Parcial | Labels/aria, foco, dialog, Escape y skip link; falta auditoría con lector de pantalla |
 | R17 | Sí | Tests HTTP/reintento, Storage, fallback y rutas; avisos visibles |
 | R18 | Parcial | Pages vigente gh-pages; URL anterior comprobada; nueva revisión no desplegada |
-| R19 | Sí | Rama feat/entrega-final-infonexia-2026; commits previos conservados y cambios posteriores trazables |
+| R19 | Sí | Rama publicada feat/entrega-final-infonexia-2026; commit 9b26afb; PR #3 abierto; commits anteriores conservados |
 | R20 | Sí | README y docs de arquitectura, rutas, servicios, fuentes, pruebas, despliegue |
 
 Ver [PRUEBAS.md](PRUEBAS.md) para distinguir comprobaciones automáticas, manuales y pendientes.
