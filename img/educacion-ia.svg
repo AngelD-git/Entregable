@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#29234c"/>
+<path d="M270 165Q385 140 500 190Q615 140 730 165V355Q615 325 500 385Q385 325 270 355Z" fill="#faf6e8"/><path d="M500 190V385" stroke="#60568a" stroke-width="7"/>
+<g stroke="#c4b5e8" stroke-width="10"><path d="M310 210L450 240M310 260L450 290M550 240L690 210M550 290L690 260"/></g>
+<g stroke="#68dfc6" stroke-width="4" fill="#68dfc6"><path d="M770 135L835 200L790 290"/><circle cx="770" cy="135" r="13"/><circle cx="835" cy="200" r="13"/><circle cx="790" cy="290" r="13"/></g>
+<text x="60" y="70" fill="#8de6d2" font-family="Arial,sans-serif" font-size="22">EDUCACIÓN + INTELIGENCIA ARTIFICIAL</text>
+<text x="60" y="510" fill="white" font-family="Arial,sans-serif" font-size="44">Aprender entre disciplinas</text><text x="60" y="552" fill="#d8d2ec" font-family="Arial,sans-serif" font-size="21">Visión de futuro · Ilustración editorial</text>
+</svg>

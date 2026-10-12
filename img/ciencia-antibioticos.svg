@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#0c3943"/>
+<g transform="rotate(-28 420 270)"><rect x="210" y="200" width="390" height="140" rx="70" fill="#e7faf3"/><path d="M405 200h115a70 70 0 0 1 0 140H405Z" fill="#60dbc1"/></g>
+<g fill="#ffcf77"><circle cx="720" cy="165" r="36"/><circle cx="765" cy="310" r="23"/><circle cx="625" cy="370" r="29"/></g>
+<path d="M610 220L720 165L765 310L625 370" fill="none" stroke="#ffcf77" stroke-width="5"/>
+<text x="60" y="70" fill="#8de6d2" font-family="Arial,sans-serif" font-size="22">MIT + McMASTER UNIVERSITY</text>
+<text x="60" y="510" fill="white" font-family="Arial,sans-serif" font-size="44">IA en la búsqueda de antibacterianos</text><text x="60" y="552" fill="#c4d8e7" font-family="Arial,sans-serif" font-size="21">Investigación preclínica · Ilustración conceptual</text>
+</svg>

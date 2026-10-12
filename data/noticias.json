@@ -2,127 +2,351 @@
   {
     "id": 1,
     "categoria": "Tecnología",
-    "titulo": "Anthropic, empresa creadora de Claude, anunció que detectó y desarticuló posibles complots que usaban su IA para investigar sobre armas biológicas",
-    "resumen": "Estas declaraciones se dan en medio de diversas advertencias sobre ciberseguridad y el avance de las nuevas tecnologías.",
-    "contenido": "Anthropic afirmó el jueves 10 de septiembre de 2026 que frustró varios posibles complots en los que se usaron sus modelos de inteligencia artificial para realizar investigaciones que podrían haber contribuido al desarrollo de armas biológicas.\n\nEn un informe, la compañía explicó que detectó y bloqueó estos usos indebidos durante el año, aunque no pudo determinar si los estudios tenían fines legítimos o malintencionados. Ante el riesgo de que sus modelos ayudaran a crear patógenos peligrosos, decidió bloquearlos. Aclaró además que las evaluaciones de capacidad aportan evidencia de lo que un modelo puede hacer, pero no demuestran que esa capacidad se usaría alguna vez para fabricar armas biológicas en el mundo real.\n\nAnthropic negó tener constancia de que otra empresa privada haya hecho público algún caso de mal uso de sus plataformas con este fin. En otro comunicado incluyó una extensa lista de casos de uso indebido de sus modelos, entre ellos el chatbot Claude, detectados en los últimos ocho meses en China, Rusia y Yemen. La empresa aseguró haber desarrollado sistemas de detección para identificar y bloquear los usos de riesgo.\n\nEl informe aparece en medio de la preocupación de expertos por el uso dual de la IA, pues los modelos que ayudan a investigar en biología también pueden servir para actividades peligrosas, y de voces que advierten sobre la creciente autonomía de estos sistemas.\n\nPor su parte, Google alertó de un cambio importante en el uso malicioso de la IA: ciberdelincuentes y grupos de espionaje ya emplean sistemas cada vez más autónomos y rápidos, capaces de planear, automatizar y ejecutar un ataque. Lo expuso en un informe de su Grupo de Inteligencia sobre Amenazas, publicado un mes después de que OpenAI anunciara la paralización de su modelo Astra, que alcanzó un nivel \"crítico\" en ciberseguridad.",
+    "titulo": "Anthropic refuerza sus salvaguardas para proteger la investigación con IA",
+    "resumen": "La empresa publica casos de uso indebido y explica cómo mejora sus defensas, una condición para aprovechar la IA de forma responsable.",
+    "contenido": "Anthropic informó que detectó y bloqueó usos indebidos de Claude entre diciembre de 2025 y agosto de 2026. La publicación documenta acciones de detección, mejoras de salvaguardas y cooperación con autoridades y socios cuando correspondía (Anthropic, 2026).\n\nLa contribución constructiva es compartir evidencia para fortalecer la protección de servicios útiles para la ciencia. El informe incluye casos relacionados con biología, pero no demuestra que se hayan fabricado armas: algunos usos podían tener fines legítimos o peligrosos. La evaluación y la supervisión siguen siendo necesarias (Anthropic, 2026).",
     "imagen": "img/noticia-1.jpg",
     "autor": "Redacción Infonexia",
-    "fecha": "2026-09-11",
-    "fuente": "El Tiempo (Agencia EFE)",
-    "fuenteUrl": "https://www.eltiempo.com/tecnosfera/novedades-tecnologia/anthropic-empresa-creadora-de-claude-anuncio-que-detecto-posibles-complots-que-usaban-su-ia-para-presuntamente-investigar-sobre-armas-biologicas-3585407",
+    "fecha": "2026-09-10",
+    "fuente": "Anthropic",
+    "fuenteUrl": "https://www.anthropic.com/threat-intelligence-report-september-2026",
     "imagenUrl": "https://imagenes2.eltiempo.com/files/image_1200_535/uploads/2026/03/25/69c3f90150e21.png",
-    "imagenCredito": "Anthropic anunció que Claude puede controlar computadoras directamente para ejecutar tareas. Foto: EFE (vía El Tiempo)"
+    "imagenCredito": "Anthropic anunció que Claude puede controlar computadoras directamente para ejecutar tareas. Foto: EFE (vía El Tiempo)",
+    "referencias": [
+      {
+        "autor": "Anthropic",
+        "fecha": "2026, septiembre",
+        "titulo": "Detecting and countering misuse of AI: September 2026",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "sitio": ""
+      }
+    ]
   },
   {
     "id": 2,
     "categoria": "Tecnología",
-    "titulo": "Bill Gates también reniega de la inteligencia artificial",
-    "resumen": "Hace unos años, plantear que alguien como Bill Gates pudiera pedir freno a la inteligencia artificial habría sonado a contradicción.",
-    "contenido": "Bill Gates, durante años uno de los grandes optimistas del mundo tecnológico, pidió poner límites al desarrollo de la inteligencia artificial. El cofundador de Microsoft sostuvo que, sin controles significativos, el daño para las personas superará cualquier beneficio posible, y lo hizo en un ensayo de unas 6.000 palabras titulado \"La turbulenta era de la IA ya está aquí\", publicado a finales de agosto en su sitio GatesNotes.\n\nEn el texto afirma que la IA será la mayor fuerza igualadora jamás inventada o la peor fuente de injusticia. Advierte que, incluso en las mejores circunstancias, la transición hacia esta nueva era será uno de los periodos más turbulentos de la historia, y que no ve pruebas de que líderes, expertos y comunidades estén enfrentando bien los desafíos: según él, no existe ningún plan para entrar en la era de la IA.\n\nPara frenar el reemplazo del trabajo humano, Gates propone gravar a la IA o a los robots de la misma forma en que se pagan impuestos por la nómina de un empleado, y reservar algunos trabajos para que los hagan solo personas. Su cambio de tono —de la fascinación inicial a la cautela— se suma a otras alertas de la industria sobre la seguridad de estos sistemas.",
+    "titulo": "Bill Gates destaca el potencial de la IA para ampliar la salud, el aprendizaje y la innovación",
+    "resumen": "En Gates Notes, Gates propone extender los beneficios de la IA con apoyo a profesionales, acceso equitativo y salvaguardas.",
+    "contenido": "En su ensayo del 26 de agosto de 2026, Bill Gates defiende que la IA puede mejorar el acceso a servicios y acelerar la innovación. Su postura es un optimismo condicionado: maximizar beneficios y reducir daños, con especial atención a quienes tienen menos recursos (Gates, 2026b).\n\nEntre las aplicaciones positivas destaca el apoyo a profesionales sanitarios, la comprensión de resultados médicos y el aprendizaje. En una publicación del 21 de enero describió una iniciativa con OpenAI orientada a llevar herramientas de IA a 1.000 clínicas de atención primaria africanas y sus comunidades para 2028. Es una meta de implementación, no un resultado ya alcanzado (Gates, 2026a).\n\nUna actualización posterior de la fundación, del 14 de septiembre, anunció planes de invertir al menos 1.000 millones de dólares durante dos años en acceso equitativo a IA. Este anuncio complementa Gates Notes; no significa que el dinero ya se haya ejecutado (Gates Foundation, 2026).",
     "imagen": "img/noticia-2.jpg",
     "autor": "Redacción Infonexia",
-    "fecha": "2026-09-11",
-    "fuente": "Negocios.com",
-    "fuenteUrl": "https://www.negocios.com/articulo/tecnologia/bill-gates-tambien-reniega-inteligencia-artificial/20260911173822493671.html",
+    "fecha": "2026-09-14",
+    "fuente": "Gates, B.",
+    "fuenteUrl": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make",
     "imagenUrl": "",
-    "imagenCredito": "Imagen original de la fuente (Negocios.com)"
+    "imagenCredito": "Imagen original de la fuente (Negocios.com)",
+    "referencias": [
+      {
+        "autor": "Gates Foundation",
+        "fecha": "2026, 14 de septiembre",
+        "titulo": "Gates Foundation commits US$1 billion to help build and deliver equitable AI that improves health and expands opportunity",
+        "url": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/09/goalkeepers-report-equitable-ai",
+        "sitio": ""
+      },
+      {
+        "autor": "Gates, B.",
+        "fecha": "2026a, 21 de enero",
+        "titulo": "Expanding access to health care through AI",
+        "url": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/expanding-access-to-health-care-through-ai",
+        "sitio": "Gates Notes"
+      },
+      {
+        "autor": "Gates, B.",
+        "fecha": "2026b, 26 de agosto",
+        "titulo": "The turbulent AI era is here. The choices we make now are critical.",
+        "url": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make",
+        "sitio": "Gates Notes"
+      }
+    ]
   },
   {
     "id": 3,
     "categoria": "Educación",
-    "titulo": "Rector de la UNAM pide a los estudiantes usar el pensamiento crítico ante la tecnología digital",
-    "resumen": "Leonardo Lomelí Vanegas hizo tal solicitud para que los jóvenes generen un conocimiento confiable e integral.",
-    "contenido": "Durante la ceremonia de apertura del ciclo escolar 2026-2027, el rector de la Universidad Nacional Autónoma de México (UNAM), Leonardo Lomelí Vanegas, pidió a la nueva generación de estudiantes que mantenga el pensamiento crítico y el rigor académico frente a las nuevas tecnologías. La UNAM dio la bienvenida ese día a unos 86 mil alumnos de bachillerato y licenciatura.\n\nLomelí planteó que parte de la formación universitaria consiste en aceptar que uno puede equivocarse y en revisar las conclusiones cuando existen razones para hacerlo, algo que consideró clave para el avance del conocimiento. Invitó además a aprovechar la libertad de cátedra y de investigación, que implica estudiar distintas corrientes de pensamiento y cuestionar explicaciones que se dan por válidas.\n\nSobre la inteligencia artificial y las herramientas digitales, advirtió que en el mundo en línea cada persona debe decidir qué información comparte y a qué fuentes les da credibilidad, y pidió no dar por cierto un dato solo porque está disponible. A su juicio, la tecnología debe ser un complemento de la formación y usarse de manera autónoma, supervisada y crítica.\n\nEl mensaje llegó tras un accidentado proceso de admisión: el examen digital de licenciatura presentó problemas y se aplicó un Examen de Control como medida extraordinaria. El rector afirmó que la Universidad asume las fallas y que las investigaciones continuarán para deslindar responsabilidades.",
-    "imagen": "img/noticia-3.jpg",
+    "titulo": "Michael Crow: la IA podría multiplicar el trabajo doctoral y acelerar la investigación",
+    "resumen": "El presidente de Arizona State University plantea el equivalente a veinte doctorados como horizonte de productividad investigadora, no como veinte títulos ya obtenidos.",
+    "contenido": "En una entrevista publicada el 26 de octubre de 2025, Michael Crow, presidente de Arizona State University, plantea que un doctorando del futuro podría realizar trabajo equivalente a veinte doctorados en el periodo normalmente dedicado a uno. La idea aparece alrededor del minuto 5:21 como posibilidad de acelerar la investigación (Bloomberg Television, 2025, 5:21).\n\nCrow vincula ese horizonte con oportunidades en ciencia y salud y describe la IA como apoyo a las capacidades humanas. La comparación no prueba que ya se hayan otorgado veinte títulos en ese plazo ni sustituye la investigación original y la evaluación académica. La biografía oficial confirma su cargo en ASU (Arizona State University, s. f.).",
+    "imagen": "img/educacion-ia.svg",
     "autor": "Redacción Infonexia",
-    "fecha": "2026-09-11",
-    "fuente": "Infobae",
-    "fuenteUrl": "https://www.infobae.com/mexico/2026/09/11/rector-de-la-unam-pide-a-los-estudiantes-usar-el-pensamiento-critico-ante-la-tecnologia-digital/",
+    "fecha": "2025-10-26",
+    "fuente": "Bloomberg Television",
+    "fuenteUrl": "https://www.youtube.com/watch?v=bpc0QOAohl8",
     "imagenUrl": "",
-    "imagenCredito": "Imagen original de la fuente (Infobae)"
+    "imagenCredito": "Ilustración editorial original de Infonexia; no es una fotografía del acontecimiento.",
+    "referencias": [
+      {
+        "autor": "Arizona State University",
+        "fecha": "s. f.",
+        "titulo": "Biography and curriculum vitae",
+        "url": "https://www.president.asu.edu/the-president/biography",
+        "sitio": ""
+      },
+      {
+        "autor": "Bloomberg Television",
+        "fecha": "2025, 26 de octubre",
+        "titulo": "“20 PhDs” In the time of one: How AI is changing college [Video]",
+        "url": "https://www.youtube.com/watch?v=bpc0QOAohl8",
+        "sitio": "YouTube"
+      }
+    ]
   },
   {
     "id": 4,
     "categoria": "Tecnología",
-    "titulo": "¿Con cuántos salarios mínimos se puede comprar el iPhone Duo? Vea los precios oficiales del iPhone 18 Pro Max",
-    "resumen": "Se proyectó un aumento de 100 dólares, equivalente a unos $312.000 pesos colombianos según la TRM.",
-    "contenido": "El 9 de septiembre de 2026, en el Apple Event, la compañía presentó el iPhone 18 Pro, el iPhone 18 Pro Max y el iPhone Duo, su primer teléfono plegable, además de otros productos. En Estados Unidos los precios de partida son de 1.199 dólares para el iPhone 18 Pro, 1.299 para el Pro Max y 1.999 para el Duo. La preventa de los Pro empezó el 12 de septiembre; el Duo se podrá reservar desde el 16 de octubre y llegará a tiendas el 23 de octubre.\n\nEn Colombia, los distribuidores anunciaron precios de lanzamiento de $5.699.000 para el iPhone 18 Pro y $6.199.000 para el Pro Max (256 GB). Con el salario mínimo de 2026, fijado en $1.750.905 sin auxilio de transporte, el Pro Max equivale a cerca de 3,5 salarios mínimos.\n\nPara el Duo, el artículo de El Tiempo calcula que los 1.999 dólares equivalen a unos $6.205.095, es decir, alrededor de tres meses y medio de salario mínimo. Aclara, sin embargo, que el valor final en el país variará según el almacenamiento y los impuestos, y que expertos consultados estiman que podría superar los 10 millones de pesos, cerca de seis meses de salario mínimo.",
+    "titulo": "iPhone Duo propone una nueva pantalla para aprender, crear y trabajar",
+    "resumen": "Apple presentó un diseño plegable que permite usar aplicaciones en paralelo; se separan las especificaciones del fabricante de las estimaciones de precio.",
+    "contenido": "Apple presentó el iPhone Duo el 9 de septiembre de 2026. Su pantalla interior de 7,6 pulgadas ofrece espacio para consultar documentos y trabajar con aplicaciones en paralelo; la exterior mide 5,4 pulgadas. Son prestaciones anunciadas por el fabricante, no una evaluación independiente (Apple, 2026).\n\nLa compañía anunció reservas desde el 16 de octubre y disponibilidad a partir del 23 de octubre. El diseño abre posibilidades para lectura, creación y multitarea. Los precios internacionales no equivalen automáticamente a un precio final colombiano: impuestos, configuración y condiciones de distribución deben verificarse antes de comparar costos. (Apple, 2026).",
     "imagen": "img/noticia-4.jpg",
     "autor": "Redacción Infonexia",
-    "fecha": "2026-09-10",
-    "fuente": "El Tiempo (Álvaro Richard Real Martínez)",
-    "fuenteUrl": "https://www.eltiempo.com/tecnosfera/dispositivos/con-cuantos-salarios-minimos-se-puede-comprar-el-iphone-duo-vea-los-precios-oficiales-del-iphone-18-pro-max-3585157",
+    "fecha": "2026-09-09",
+    "fuente": "Apple",
+    "fuenteUrl": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
     "imagenUrl": "https://imagenes2.eltiempo.com/files/image_1200_535/files/fp/uploads/2026/09/09/6aa1a0581fd04.r_d.817-421.jpeg",
-    "imagenCredito": "Foto: Apple (vía El Tiempo)"
+    "imagenCredito": "Foto: Apple (vía El Tiempo)",
+    "referencias": [
+      {
+        "autor": "Apple",
+        "fecha": "2026, 9 de septiembre",
+        "titulo": "Apple unveils iPhone Duo",
+        "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+        "sitio": ""
+      }
+    ]
   },
   {
     "id": 5,
     "categoria": "Educación",
-    "titulo": "ICETEX ofrece descuento en la matrícula para estudiar en Reino Unido: así puede aplicar",
-    "resumen": "Esta noticia informa sobre una convocatoria de becas de descuento académico gestionada por el ICETEX en alianza con la Universidad de Salford, Reino Unido, para realizar estudios de maestría presenciales.",
-    "contenido": "El ICETEX, en alianza con la University of Salford (Manchester, Reino Unido), abrió una convocatoria para cursar una maestría con descuento en la matrícula. Habrá diez reducciones de 5.000 libras esterlinas sobre el valor de la matrícula y una beca del 100 % del valor de la matrícula. Los programas son presenciales, de un año de duración, se dictan en inglés y empiezan en septiembre de 2027. La oferta abarca áreas como animación y tecnología creativa, salud pública, finanzas, construcción, gestión, inteligencia artificial, ciberseguridad, ciencia de datos, ingeniería, periodismo y psicología.\n\nPara postularse hay que tener más de 21 y menos de 65 años, título profesional, promedio mínimo de 3,7 sobre 5,0, al menos 12 meses de experiencia profesional y un nivel de inglés equivalente a B2. También se exige contar con la admisión al programa en Salford al momento de postularse y, si se es beneficiario de alguna línea de crédito del ICETEX, no estar en mora.\n\nLos documentos clave son el título y las notas de pregrado, la cédula, la carta de admisión, la certificación de experiencia laboral y el certificado de inglés. La convocatoria cierra el 26 de febrero de 2027 a la 1:00 p. m. y el ICETEX aclara que no financia ningún otro gasto distinto a la matrícula, por lo que el beneficiario debe asumir el resto de costos de sus estudios.",
+    "titulo": "Becas de Salford e ICETEX abren oportunidades para estudios de maestría",
+    "resumen": "La convocatoria incluye descuentos de matrícula y una beca completa de matrícula; los demás gastos requieren planificación.",
+    "contenido": "El Espectador informó sobre una convocatoria de ICETEX y la Universidad de Salford para maestrías presenciales en Manchester. La oferta anunciada incluye diez descuentos de 5.000 libras esterlinas y una beca del 100 % de la matrícula, con inicio previsto en septiembre de 2027 (Redacción Educación, 2026).\n\nLa oportunidad permite ampliar la formación en distintas áreas. Las condiciones incluyen admisión al programa, requisitos académicos, experiencia profesional e inglés. El plazo divulgado es el 26 de febrero de 2027 a la 1:00 p. m. La ayuda no cubre automáticamente manutención, viajes ni otros gastos: antes de postularse deben consultarse las bases vigentes del oferente (Redacción Educación, 2026).",
     "imagen": "img/noticia-5.jpg",
     "autor": "Redacción Infonexia",
     "fecha": "2026-09-06",
-    "fuente": "El Espectador (Redacción Educación)",
+    "fuente": "Redacción Educación",
     "fuenteUrl": "https://www.elespectador.com/educacion/icetex-ofrece-5000-de-descuento-para-estudiar-en-reino-unido-asi-puede-aplicar/",
     "imagenUrl": "https://www.elespectador.com/wp-content/uploads/elespectador/QPHBEYHHOZG6PKABGHTK7VJWYI.jpg?resize=1200,630",
-    "imagenCredito": "Imagen generada con inteligencia artificial (vía El Espectador)"
+    "imagenCredito": "Imagen generada con inteligencia artificial (vía El Espectador)",
+    "referencias": [
+      {
+        "autor": "Redacción Educación",
+        "fecha": "2026, 6 de septiembre",
+        "titulo": "ICETEX ofrece descuento en la matrícula para estudiar en Reino Unido: así puede aplicar",
+        "url": "https://www.elespectador.com/educacion/icetex-ofrece-5000-de-descuento-para-estudiar-en-reino-unido-asi-puede-aplicar/",
+        "sitio": "El Espectador"
+      }
+    ]
   },
   {
     "id": 6,
     "categoria": "Educación",
-    "titulo": "SENA ofrece 40.000 cupos en 1.500 programas presenciales y virtuales: ¿cómo inscribirse?",
-    "resumen": "Incluye programas de nivel Auxiliar, Operario, Técnico, Profundización Técnica y Tecnólogo en áreas como Construcción, Contabilidad, Sistemas, Recursos Humanos y Cocina.",
-    "contenido": "El Servicio Nacional de Aprendizaje (SENA) anunció el viernes 28 de agosto de 2026 la apertura de su Cuarta Convocatoria Presencial y a Distancia del año, con más de 40.000 cupos de formación gratuita en más de 1.500 programas de los niveles Auxiliar, Operario, Técnico, Profundización Técnica y Tecnólogo.\n\nEntre los programas destacados figuran Construcción de Edificaciones, Contabilización de Operaciones Comerciales y Financieras, Recursos Humanos, Sistemas Teleinformáticos, Asistencia Administrativa y Cocina. La oferta tiene jornadas diurna, nocturna, madrugada y mixta, y está dirigida a la comunidad en general y a grupos como población campesina, personas con discapacidad, comunidades NARP e indígenas, comunidad LGBTIQ+ y mujeres. La edad mínima para la formación titulada es de 14 años.\n\nPara participar hay que registrarse en la plataforma betowa.sena.edu.co, explorar la sección \"Presencial y a distancia\" y formalizar la inscripción en el programa elegido. Las inscripciones iniciaron el 28 de agosto y, tras una ampliación, se extendieron hasta el 6 de septiembre. El cronograma contempló pruebas web el 8 y 9 de septiembre, resultados el 23 de septiembre e inicio de la formación el 7 de octubre de 2026.",
+    "titulo": "La formación gratuita del SENA amplía oportunidades de aprendizaje",
+    "resumen": "La cuarta convocatoria de 2026 anunció más de 40.000 cupos; sus plazos deben distinguirse de las convocatorias actualmente abiertas.",
+    "contenido": "El 28 de agosto de 2026, El Espectador informó que el SENA ofrecía más de 40.000 cupos en más de 1.500 programas de formación. La oferta incluyó niveles auxiliares, operarios, técnicos y tecnológicos, con áreas como construcción, sistemas y administración (Redacción Educación, 2026).\n\nLa noticia muestra oportunidades de formación gratuita para distintas comunidades. Se trata de una convocatoria fechada: su publicación no significa que las inscripciones sigan abiertas hoy. Para conocer programas disponibles, requisitos y cronogramas actuales, los aspirantes deben consultar la plataforma oficial del SENA. El registro debe completarse según las condiciones del programa elegido (Redacción Educación, 2026).",
     "imagen": "img/noticia-6.jpg",
     "autor": "Redacción Infonexia",
     "fecha": "2026-08-28",
-    "fuente": "El Espectador",
+    "fuente": "Redacción Educación",
     "fuenteUrl": "https://www.elespectador.com/educacion/sena-ofrece-40000-cupos-en-1500-programas-presenciales-y-virtuales-como-inscribirse/",
     "imagenUrl": "",
-    "imagenCredito": "Imagen original de la fuente (El Espectador)"
+    "imagenCredito": "Imagen original de la fuente (El Espectador)",
+    "referencias": [
+      {
+        "autor": "Redacción Educación",
+        "fecha": "2026, 28 de agosto",
+        "titulo": "SENA ofrece 40.000 cupos en 1.500 programas presenciales y virtuales: ¿cómo inscribirse?",
+        "url": "https://www.elespectador.com/educacion/sena-ofrece-40000-cupos-en-1500-programas-presenciales-y-virtuales-como-inscribirse/",
+        "sitio": "El Espectador"
+      }
+    ]
   },
   {
     "id": 7,
     "categoria": "Tecnología",
-    "titulo": "Anthropic alerta de que ha frenado posibles intentos de crear armas biológicas con su IA",
-    "resumen": "La compañía desconoce si la motivación detrás de estos accesos era la investigación científica o los usos maliciosos.",
-    "contenido": "Anthropic publicó un nuevo informe en el que explica que bloqueó cinco casos en los que se quiso usar sus modelos de inteligencia artificial en desarrollos de laboratorio que podrían haber llevado a fabricar armas biológicas. La compañía no sabe si la motivación detrás de esos accesos era la investigación científica o un uso malicioso, y por eso decidió cortarlos.\n\nUno de los casos más llamativos tiene que ver con el virus chikungunya. En mayo, la empresa detectó a un científico que pidió ayuda a Claude para preparar una solicitud de financiación para una investigación de \"ganancia de función\"; el hecho de que pudiera estar destinada a un instituto militar encendió las alarmas. El informe señala que este tipo de estudio serviría para desarrollar mejores vacunas y tratamientos, pero también podría volver más peligroso al patógeno. Otros intentos reportados buscaban hacer más contagiosa la gripe aviar, estudiar modificaciones de la viruela que aumentaran su resistencia al sistema inmunitario y elaborar un catálogo de toxinas de animales venenosos.\n\nEl documento se parece a los informes que Facebook y otras redes sociales publicaban hace unos años sobre operaciones encubiertas en sus plataformas, aunque con la IA el daño potencial sería mucho mayor. Además de la biología, Anthropic describe usos riesgosos relacionados con armas convencionales, ciberseguridad y operaciones de influencia, con casos atribuidos a China, Rusia y Yemen.",
+    "titulo": "Compartir evidencia sobre seguridad ayuda a preservar los beneficios de la IA",
+    "resumen": "El informe de Anthropic permite estudiar usos de riesgo y fortalecer los controles sin confundir investigación legítima con daño demostrado.",
+    "contenido": "La documentación pública de Anthropic permite examinar cómo se evalúan usos de riesgo en herramientas de IA. La compañía describe casos detectados y bloqueados y reconoce la dificultad de distinguir algunas investigaciones legítimas de actividades con potencial malicioso (Anthropic, 2026).\n\nLa lectura constructiva es que los controles, la transparencia y la colaboración pueden proteger aplicaciones beneficiosas. Estos relatos son afirmaciones de la empresa sobre sus propias actuaciones, no pruebas independientes de que se hayan producido daños biológicos. La difusión de evidencia debe acompañarse de revisión externa y de límites proporcionales al riesgo (Anthropic, 2026).",
     "imagen": "img/noticia-7.jpg",
     "autor": "Redacción Infonexia",
     "fecha": "2026-09-10",
-    "fuente": "El País",
-    "fuenteUrl": "https://elpais.com/tecnologia/2026-09-10/anthropic-alerta-de-que-ha-frenado-posibles-intentos-de-crear-armas-biologicas-con-su-ia.html",
+    "fuente": "Anthropic",
+    "fuenteUrl": "https://www.anthropic.com/threat-intelligence-report-september-2026",
     "imagenUrl": "",
-    "imagenCredito": "Imagen original de la fuente (El País)"
+    "imagenCredito": "Imagen original de la fuente (El País)",
+    "referencias": [
+      {
+        "autor": "Anthropic",
+        "fecha": "2026, septiembre",
+        "titulo": "Detecting and countering misuse of AI: September 2026",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "sitio": ""
+      }
+    ]
   },
   {
     "id": 8,
     "categoria": "Tecnología",
-    "titulo": "La inteligencia artificial avanza más rápido que las reglas para controlarla",
-    "resumen": "Esta noticia de Noticias ONU aborda el informe preliminar presentado por el Panel Científico Internacional Independiente sobre Inteligencia Artificial de la ONU.",
-    "contenido": "El Panel Científico Internacional Independiente sobre Inteligencia Artificial de la ONU presentó el miércoles 8 de julio de 2026 su informe preliminar sobre esta tecnología. Su conclusión central es que las capacidades de la IA se aceleran más rápido de lo que los gobiernos logran seguirles el paso, y que las normas pensadas para garantizar un uso seguro tienen dificultades para mantenerse al día. El panel fue creado por la Asamblea General en 2025 y reúne a 40 expertos de todas las regiones que actúan a título personal.\n\nEl documento reconoce beneficios: la IA apoya la investigación científica, vuelve la tecnología más accesible para personas con discapacidad y amplía las posibilidades de educación personalizada y de apoyo en salud mental. Pero también señala riesgos, como el impacto ambiental de los centros de datos, que consumen mucha energía, y la posibilidad de que, si no se cierran las brechas entre países, la IA refuerce las desigualdades en lugar de reducirlas. Según reportes, la mayoría de los países carece de la capacidad técnica para evaluar los modelos más complejos.\n\nEl panel insiste en que la inteligencia artificial no es buena ni mala por naturaleza y recomienda evaluaciones independientes más sólidas, cooperación internacional y normas comunes para que los sistemas sean seguros, transparentes y sujetos a rendición de cuentas. El informe alimenta el Diálogo Global sobre la Gobernanza de la IA, que inició en Ginebra en julio de 2026.",
+    "titulo": "La ONU reúne evidencia científica para orientar una IA con beneficios compartidos",
+    "resumen": "Un panel de 40 expertos analiza oportunidades en ciencia, salud, educación y agricultura, junto con los desafíos de una adopción responsable.",
+    "contenido": "Naciones Unidas en México publicó el 7 de julio de 2026 una nota sobre el informe preliminar de su Panel Científico Internacional Independiente sobre IA. El trabajo reúne a 40 expertos y ofrece una base de evidencia para comprender oportunidades, riesgos e impactos (Naciones Unidas, 2026).\n\nEntre los ámbitos estudiados figuran ciencia, salud, educación y agricultura. Compartir conocimiento puede ayudar a los países a ampliar beneficios y afrontar desigualdades. El panel evalúa evidencia y no formula recomendaciones específicas de política. Sus evaluaciones posteriores permitirán actualizar lo que se sabe de esta tecnología (Naciones Unidas, 2026).",
     "imagen": "img/noticia-8.jpg",
     "autor": "Redacción Infonexia",
-    "fecha": "2026-07-08",
-    "fuente": "Noticias ONU",
-    "fuenteUrl": "https://news.un.org/es/story/2026/07/1541630",
+    "fecha": "2026-07-07",
+    "fuente": "Naciones Unidas",
+    "fuenteUrl": "https://mexico.un.org/es/318773-panel-cient%C3%ADfico-internacional-independiente-sobre-ia-publica-informe-preliminar-sobre",
     "imagenUrl": "",
-    "imagenCredito": "Imagen original de la fuente (Noticias ONU)"
+    "imagenCredito": "Imagen original de la fuente (Noticias ONU)",
+    "referencias": [
+      {
+        "autor": "Naciones Unidas",
+        "fecha": "2026, 7 de julio",
+        "titulo": "Panel Científico Internacional Independiente sobre IA publica informe preliminar sobre oportunidades, riesgos e impactos de la inteligencia artificial",
+        "url": "https://mexico.un.org/es/318773-panel-cient%C3%ADfico-internacional-independiente-sobre-ia-publica-informe-preliminar-sobre",
+        "sitio": ""
+      }
+    ]
   },
   {
     "id": 9,
     "categoria": "Tecnología",
-    "titulo": "Apple presentó los AirPods 5 con mayor cancelación de ruido y nuevas funciones de IA",
-    "resumen": "La nueva generación de auriculares llega con mejoras de sonido, además de herramientas como Siri mediante gestos y traducción en tiempo real.",
-    "contenido": "Durante el Apple Event de septiembre de 2026, Apple presentó los AirPods 5, una nueva generación de audífonos de formato abierto con mejoras en sonido, cancelación activa de ruido, autonomía y funciones de inteligencia artificial. Vienen en blanco y habrá dos versiones: una de 129 dólares (unos 400.000 pesos colombianos) y otra de 149 dólares (cerca de 465.000 pesos) con estuche de carga inalámbrica.\n\nSegún Apple, la cancelación de ruido puede eliminar hasta un 50 % más de ruido externo que los AirPods 4 con ANC, gracias a una arquitectura acústica multipuerto y a un mejor procesamiento del audio. También mejoran el modo Transparencia, el Audio Adaptativo y la función Conciencia de Conversación, que baja el volumen cuando el usuario empieza a hablar.\n\nEn inteligencia artificial, con un iPhone compatible con Apple Intelligence los usuarios pueden interactuar con Siri usando información contextual y responder que sí o que no con gestos de la cabeza. Otra novedad es la traducción en vivo, que facilita conversaciones entre personas que hablan idiomas distintos y se configura en la app Traducir.\n\nLa versión de 149 dólares incorpora un sensor de presión para subir o bajar el volumen deslizando el dedo sobre el auricular. Ofrece hasta cinco horas de reproducción con ANC por carga y hasta 22 horas con el estuche, que se carga por USB-C, Qi o cargador de Apple Watch. Los AirPods 5 contienen un 40 % de material reciclado, ya pueden reservarse en Estados Unidos y llegarán a tiendas el viernes 18 de septiembre.",
+    "titulo": "AirPods 5 incorporan mejoras de audio y traducción para facilitar la comunicación",
+    "resumen": "La traducción en vivo y las mejoras de sonido abren usos cotidianos, sujetos a compatibilidad de dispositivos, software e idiomas.",
+    "contenido": "Apple anunció los AirPods 5 el 9 de septiembre de 2026, con mejoras de sonido y cancelación activa de ruido en un diseño abierto. El fabricante incorpora traducción en vivo como una herramienta para facilitar conversaciones entre idiomas (Apple, 2026).\n\nLa utilidad depende del dispositivo compatible, de versiones de software y de idiomas y regiones admitidos. No es una prestación universal ni sustituye la interpretación profesional en situaciones que requieren exactitud. Las mejoras de cancelación y autonomía son afirmaciones del fabricante y pueden variar según las condiciones de uso. Para conocer el costo en Colombia es necesario consultar al distribuidor (Apple, 2026).",
     "imagen": "img/noticia-9.jpg",
     "autor": "Redacción Infonexia",
     "fecha": "2026-09-09",
-    "fuente": "El Tiempo (Pablo Pachón Ramírez)",
-    "fuenteUrl": "https://www.eltiempo.com/tecnosfera/novedades-tecnologia/apple-presento-los-airpods-5-con-mayor-cancelacion-de-ruido-y-nuevas-funciones-de-ia-habra-dos-versiones-disponibles-3584818",
+    "fuente": "Apple",
+    "fuenteUrl": "https://www.apple.com/ie/newsroom/2026/09/apple-introduces-airpods-5-featuring-best-in-class-open-ear-active-noise-cancellation/",
     "imagenUrl": "https://imagenes2.eltiempo.com/files/image_1200_535/files/fp/uploads/2026/09/09/6aa1ab34a2058.r_d.344-281.png",
-    "imagenCredito": "Apple presentó dos versiones de los nuevos AirPods 5. Foto: Apple (vía El Tiempo)"
+    "imagenCredito": "Apple presentó dos versiones de los nuevos AirPods 5. Foto: Apple (vía El Tiempo)",
+    "referencias": [
+      {
+        "autor": "Apple",
+        "fecha": "2026, 9 de septiembre",
+        "titulo": "Apple introduces AirPods 5 with best-in-class open-ear Active Noise Cancellation",
+        "url": "https://www.apple.com/ie/newsroom/2026/09/apple-introduces-airpods-5-featuring-best-in-class-open-ear-active-noise-cancellation/",
+        "sitio": ""
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "categoria": "Tecnología",
+    "titulo": "AlphaFold 3 amplía el estudio de las moléculas de la vida",
+    "resumen": "Google DeepMind e Isomorphic Labs desarrollaron un modelo para predecir interacciones moleculares; sus investigadores están vinculados al Nobel de Química de 2024.",
+    "contenido": "Google DeepMind e Isomorphic Labs presentaron AlphaFold 3 el 8 de mayo de 2024. El sistema predice estructuras e interacciones de proteínas, ADN, ARN y otras moléculas, lo que ayuda a formular hipótesis para la investigación biológica (Google DeepMind, 2024).\n\nDemis Hassabis y John Jumper compartieron la mitad del Nobel de Química de 2024 por predicción de estructuras proteicas. El reconocimiento destaca especialmente el avance de AlphaFold 2; no premió exclusivamente AlphaFold 3. La otra mitad correspondió a David Baker por diseño computacional de proteínas (Nobel Prize, 2024).\n\nEstas predicciones apoyan el trabajo experimental: no demuestran por sí solas la eficacia de un medicamento (Google DeepMind, 2024).",
+    "fecha": "2024-05-08",
+    "autor": "Redacción Infonexia",
+    "imagen": "img/ciencia-alphafold.svg",
+    "imagenCredito": "Ilustración editorial original de Infonexia; representación conceptual, no fotografía del estudio.",
+    "fuente": "Google DeepMind",
+    "fuenteUrl": "https://blog.google/innovation-and-ai/products/google-deepmind-isomorphic-alphafold-3-ai-model/",
+    "referencias": [
+      {
+        "autor": "Google DeepMind",
+        "fecha": "2024, 8 de mayo",
+        "titulo": "AlphaFold 3 predicts the structure and interactions of all of life’s molecules",
+        "url": "https://blog.google/innovation-and-ai/products/google-deepmind-isomorphic-alphafold-3-ai-model/",
+        "sitio": "Google"
+      },
+      {
+        "autor": "Nobel Prize",
+        "fecha": "2024, 9 de octubre",
+        "titulo": "The Nobel Prize in Chemistry 2024 [Comunicado de prensa]",
+        "url": "https://www.nobelprize.org/prizes/chemistry/2024/press-release/",
+        "sitio": ""
+      }
+    ],
+    "cienciaIA": true
+  },
+  {
+    "id": 11,
+    "categoria": "Tecnología",
+    "titulo": "AlphaGenome ayuda a investigar cómo las variantes del ADN regulan los genes",
+    "resumen": "Google DeepMind propone una herramienta para relacionar cambios en el ADN con procesos de regulación genética.",
+    "contenido": "Google DeepMind presentó AlphaGenome el 25 de junio de 2025. El modelo analiza secuencias de hasta un millón de pares de bases y estima cómo variantes del ADN pueden cambiar procesos de regulación de genes (Avsec & Latysheva, 2025).\n\nSu aporte es permitir que los investigadores comparen secuencias y prioricen hipótesis sobre expresión genética y procesamiento de ARN. La página oficial informa que el trabajo se publicó en Nature en enero de 2026. La herramienta es de investigación: sus predicciones no equivalen a un diagnóstico clínico ni garantizan un tratamiento (Avsec & Latysheva, 2025).",
+    "fecha": "2025-06-25",
+    "autor": "Redacción Infonexia",
+    "imagen": "img/ciencia-alphagenome.svg",
+    "imagenCredito": "Ilustración editorial original de Infonexia; representación conceptual, no fotografía del estudio.",
+    "fuente": "Avsec, Z., & Latysheva, N.",
+    "fuenteUrl": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
+    "referencias": [
+      {
+        "autor": "Avsec, Z., & Latysheva, N.",
+        "fecha": "2025, 25 de junio",
+        "titulo": "AlphaGenome: AI for better understanding the genome",
+        "url": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
+        "sitio": "Google DeepMind"
+      }
+    ],
+    "cienciaIA": true
+  },
+  {
+    "id": 12,
+    "categoria": "Tecnología",
+    "titulo": "MIT y McMaster usan IA para identificar un candidato contra una bacteria resistente",
+    "resumen": "El compuesto abaucina mostró actividad experimental frente a Acinetobacter baumannii; el avance es preclínico.",
+    "contenido": "Investigadores del MIT y de McMaster University utilizaron aprendizaje automático para identificar un compuesto con actividad contra Acinetobacter baumannii, una bacteria que puede resistir numerosos antibióticos. El trabajo fue anunciado el 25 de mayo de 2023 y publicado en Nature Chemical Biology (Trafton, 2023).\n\nEl compuesto, denominado abaucina, mostró actividad en ensayos de laboratorio y en infecciones de heridas en ratones. La IA ayudó a seleccionar candidatos para comprobación experimental. Es una vía prometedora para investigar nuevos antibacterianos, pero estos resultados preclínicos no prueban eficacia o seguridad en personas ni significan que exista un medicamento autorizado (Trafton, 2023).",
+    "fecha": "2023-05-25",
+    "autor": "Redacción Infonexia",
+    "imagen": "img/ciencia-antibioticos.svg",
+    "imagenCredito": "Ilustración editorial original de Infonexia; representación conceptual, no fotografía del estudio.",
+    "fuente": "Trafton, A.",
+    "fuenteUrl": "https://news.mit.edu/2023/using-ai-scientists-combat-drug-resistant-infections-0525",
+    "referencias": [
+      {
+        "autor": "Trafton, A.",
+        "fecha": "2023, 25 de mayo",
+        "titulo": "Using AI, scientists find a drug that could combat drug-resistant infections",
+        "url": "https://news.mit.edu/2023/using-ai-scientists-combat-drug-resistant-infections-0525",
+        "sitio": "MIT News"
+      }
+    ],
+    "cienciaIA": true
+  },
+  {
+    "id": 13,
+    "categoria": "Tecnología",
+    "titulo": "EPFL y DeepMind controlan plasma con IA para avanzar en la investigación de fusión",
+    "resumen": "El Swiss Plasma Center probó un controlador de aprendizaje por refuerzo en su tokamak experimental TCV.",
+    "contenido": "El Swiss Plasma Center de EPFL y DeepMind desarrollaron un método de control magnético de plasma mediante aprendizaje por refuerzo. Tras entrenarlo en simulación, lo probaron en el tokamak TCV y obtuvieron distintas configuraciones de plasma (Hiard, 2022).\n\nEl estudio, publicado en Nature, muestra que la IA puede apoyar experimentos de física complejos y explorar estrategias de control. Es un avance de investigación en fusión nuclear; no demuestra que una central comercial haya generado electricidad ni que se haya resuelto la viabilidad energética de la fusión (Hiard, 2022).",
+    "fecha": "2022-02-16",
+    "autor": "Redacción Infonexia",
+    "imagen": "img/ciencia-fusion.jpg",
+    "imagenCredito": "2022 EPFL / Curdin Wüthrich – SPC. CC BY-SA 4.0. Fotografía de plasma en el TCV; sin modificaciones.",
+    "fuente": "Hiard, F.",
+    "fuenteUrl": "https://actu.epfl.ch/news/epfl-and-deepmind-use-ai-to-control-plasmas-for-nu/",
+    "referencias": [
+      {
+        "autor": "Hiard, F.",
+        "fecha": "2022, 16 de febrero",
+        "titulo": "EPFL and DeepMind use AI to control plasmas for nuclear fusion",
+        "url": "https://actu.epfl.ch/news/epfl-and-deepmind-use-ai-to-control-plasmas-for-nu/",
+        "sitio": "EPFL"
+      }
+    ],
+    "cienciaIA": true
+  },
+  {
+    "id": 14,
+    "categoria": "Tecnología",
+    "titulo": "GenCast amplía la predicción meteorológica con IA y escenarios probabilísticos",
+    "resumen": "Google DeepMind desarrolla pronósticos de hasta quince días para estudiar la incertidumbre del tiempo y riesgos extremos.",
+    "contenido": "Google DeepMind presentó GenCast el 4 de diciembre de 2024. El modelo genera conjuntos de escenarios meteorológicos hasta quince días por adelantado y permite analizar incertidumbres y fenómenos extremos (Price & Willson, 2024).\n\nEl trabajo, publicado en Nature, reportó mejoras frente al sistema de referencia evaluado. Esta capacidad puede apoyar la planificación y el estudio de riesgos, incluida la energía eólica. Los resultados corresponden a las pruebas descritas por sus autores: no implican certeza para cada lugar y fecha ni sustituyen automáticamente los avisos de los servicios meteorológicos oficiales (Price & Willson, 2024).",
+    "fecha": "2024-12-04",
+    "autor": "Redacción Infonexia",
+    "imagen": "img/ciencia-gencast.svg",
+    "imagenCredito": "Ilustración editorial original de Infonexia; representación conceptual, no fotografía del estudio.",
+    "fuente": "Price, I., & Willson, M.",
+    "fuenteUrl": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/",
+    "referencias": [
+      {
+        "autor": "Price, I., & Willson, M.",
+        "fecha": "2024, 4 de diciembre",
+        "titulo": "GenCast predicts weather and the risks of extreme conditions with state-of-the-art accuracy",
+        "url": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/",
+        "sitio": "Google DeepMind"
+      }
+    ],
+    "cienciaIA": true
   }
 ]
