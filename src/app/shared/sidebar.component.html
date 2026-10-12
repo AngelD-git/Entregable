@@ -1,8 +1,6 @@
-<div class="sidebar-overlay" [class.activo]="ui.sidebarAbierto()" (click)="ui.cerrarSidebar()"></div>
-
-<aside class="sidebar" id="sidebar" [class.abierto]="ui.sidebarAbierto()">
+<dialog #panel class="sidebar" id="sidebar" aria-labelledby="sidebar-titulo" [class.abierto]="ui.sidebarAbierto()" (cancel)="ui.cerrarSidebar()">
   <div class="sidebar-cabecera">
-    <span class="sidebar-titulo">Categorías</span>
+    <h2 id="sidebar-titulo" class="sidebar-titulo">Categorías</h2>
     <button type="button" class="sidebar-cerrar" aria-label="Cerrar menú de categorías" (click)="ui.cerrarSidebar()">✕</button>
   </div>
 
@@ -42,4 +40,4 @@
       </li>
     }
   </ul>
-</aside>
+</dialog>

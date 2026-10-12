@@ -1,4 +1,5 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
+import { FavoritosService } from '../services/favoritos.service';
 import { RouterLink } from '@angular/router';
 import { Noticia } from '../models/noticia.model';
 import { TruncarPipe } from './pipes';
@@ -21,7 +22,9 @@ export class NoticiaCardComponent {
   readonly mostrarQuitar = input(false);
 
   readonly eliminar = output<string>();
+  readonly editar = output<string>();
   readonly quitar = output<string>();
 
   protected readonly alFallar = imagenRespaldo;
+  protected readonly favoritos = inject(FavoritosService);
 }

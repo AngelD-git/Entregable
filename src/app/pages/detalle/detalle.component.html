@@ -29,6 +29,18 @@
         </p>
       }
     </div>
+    @if (n.referencias?.length) {
+      <section class="referencias" aria-labelledby="referencias-titulo">
+        <h2 id="referencias-titulo">Referencias</h2>
+        <ul>
+          @for (r of n.referencias; track r.url) {
+            <li>{{ r.autor }} ({{ r.fecha }}). <em>{{ r.titulo }}</em>. {{ r.sitio || '' }}
+              <a [href]="r.url" target="_blank" rel="noopener noreferrer">{{ r.url }}</a>
+            </li>
+          }
+        </ul>
+      </section>
+    }
   </article>
 
   @if (relacionadas().length > 0) {

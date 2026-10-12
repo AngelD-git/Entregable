@@ -19,6 +19,16 @@ export interface Noticia {
   fuenteUrl?: string;
   imagenUrl?: string;
   imagenCredito?: string;
+  referencias?: Referencia[];
+}
+
+/** Referencia bibliográfica APA de una fuente pública. */
+export interface Referencia {
+  autor: string;
+  fecha: string;
+  titulo: string;
+  sitio?: string;
+  url: string;
 }
 
 /** Datos que ingresa el usuario al crear una noticia (mini CRUD). */

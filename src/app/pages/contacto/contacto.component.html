@@ -1,45 +1,44 @@
 <h1 class="contacto-titulo">Ponte en contacto con nosotros</h1>
+<p id="contacto-ayuda">Formulario de demostración: valida los campos en este navegador. No guarda ni envía mensajes a la redacción.</p>
 
 <!-- novalidate: la validación la hace Angular (Reactive Forms). -->
-<form class="formulario" [formGroup]="formulario" (ngSubmit)="enviar()" novalidate>
+<form class="formulario" aria-describedby="contacto-ayuda" [formGroup]="formulario" (ngSubmit)="enviar()" (input)="enviado.set(false)" novalidate>
   <div class="campo">
     <label for="nombre">Nombre</label>
-    <input id="nombre" type="text" formControlName="nombre" placeholder="Jane" [class.invalido]="error('nombre')">
-    <p class="mensaje-error">{{ error('nombre') }}</p>
+    <input id="nombre" type="text" formControlName="nombre" placeholder="Jane" [class.invalido]="error('nombre')" [attr.aria-invalid]="!!error('nombre')" aria-describedby="error-nombre">
+    <p id="error-nombre" class="mensaje-error">{{ error('nombre') }}</p>
   </div>
   <div class="campo">
     <label for="apellido">Apellido</label>
-    <input id="apellido" type="text" formControlName="apellido" placeholder="Smitherton" [class.invalido]="error('apellido')">
-    <p class="mensaje-error">{{ error('apellido') }}</p>
+    <input id="apellido" type="text" formControlName="apellido" placeholder="Smitherton" [class.invalido]="error('apellido')" [attr.aria-invalid]="!!error('apellido')" aria-describedby="error-apellido">
+    <p id="error-apellido" class="mensaje-error">{{ error('apellido') }}</p>
   </div>
   <div class="campo campo-completo">
     <label for="correo">Correo electrónico</label>
-    <input id="correo" type="email" formControlName="correo" placeholder="correoelectronico&#64;dominio.net" [class.invalido]="error('correo')">
-    <p class="mensaje-error">{{ error('correo') }}</p>
+    <input id="correo" type="email" formControlName="correo" placeholder="correoelectronico&#64;dominio.net" [class.invalido]="error('correo')" [attr.aria-invalid]="!!error('correo')" aria-describedby="error-correo">
+    <p id="error-correo" class="mensaje-error">{{ error('correo') }}</p>
   </div>
   <div class="campo campo-completo">
     <label for="asunto">Asunto</label>
-    <input id="asunto" type="text" formControlName="asunto" placeholder="Asunto" [class.invalido]="error('asunto')">
-    <p class="mensaje-error">{{ error('asunto') }}</p>
+    <input id="asunto" type="text" formControlName="asunto" placeholder="Asunto" [class.invalido]="error('asunto')" [attr.aria-invalid]="!!error('asunto')" aria-describedby="error-asunto">
+    <p id="error-asunto" class="mensaje-error">{{ error('asunto') }}</p>
   </div>
   <div class="campo campo-completo">
     <label for="mensaje">Tu mensaje</label>
-    <textarea id="mensaje" formControlName="mensaje" placeholder="Escribe tu pregunta o mensaje" [class.invalido]="error('mensaje')"></textarea>
-    <p class="mensaje-error">{{ error('mensaje') }}</p>
+    <textarea id="mensaje" formControlName="mensaje" placeholder="Escribe tu pregunta o mensaje" [class.invalido]="error('mensaje')" [attr.aria-invalid]="!!error('mensaje')" aria-describedby="error-mensaje"></textarea>
+    <p id="error-mensaje" class="mensaje-error">{{ error('mensaje') }}</p>
   </div>
   <div class="campo campo-completo">
-    <button type="submit" class="btn">Enviar</button>
+    <button type="submit" class="btn">Validar mensaje de prueba</button>
   </div>
 </form>
 
-<p class="mensaje-confirmacion" [class.visible]="enviado()">
-  ¡Gracias por escribirnos! Hemos recibido tu mensaje y te responderemos pronto.
+<p role="status" class="mensaje-confirmacion" [class.visible]="enviado()">
+  Mensaje validado en este navegador. No se ha enviado ni guardado; puedes seguir editándolo.
 </p>
 
 <section class="datos-contacto">
-  <h3>Datos de contacto</h3>
-  <p><strong>Dirección:</strong> Av. #123, Edificio Infonexia, Piso 4</p>
-  <p><strong>Teléfono:</strong> +57 (601) 555-5555</p>
-  <p><strong>Correo editorial:</strong> contacto&#64;infonexia.com</p>
-  <p><strong>Horario de atención:</strong> Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+  <h2>Acerca de esta demostración</h2>
+  <p>Infonexia es un proyecto académico. No tiene canales de atención editorial conectados.</p>
 </section>
+

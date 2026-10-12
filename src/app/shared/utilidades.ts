@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 
-export const IMAGEN_RESPALDO = 'img/Imagen-Prueba.png';
+export const IMAGEN_RESPALDO = 'img/noticia-respaldo.svg';
 export const REGEX_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** Solo se aceptan imágenes locales dentro de img/. */
@@ -14,7 +14,7 @@ export function imagenSegura(ruta: unknown): string {
 export function urlSegura(url: unknown): string {
   try {
     const u = new URL(String(url));
-    return u.protocol === 'https:' ? u.href : '';
+    return u.protocol === 'https:' && !u.username && !u.password ? u.href : '';
   } catch {
     return '';
   }

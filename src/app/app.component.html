@@ -1,7 +1,8 @@
+<a class="saltar-contenido" href="#contenido" (click)="$event.preventDefault(); contenido.focus()">Saltar al contenido</a>
 <app-header />
 <app-sidebar />
 
-<main class="contenedor">
+<main #contenido id="contenido" tabindex="-1" class="contenedor">
   <!-- Aviso si localStorage falla (property binding + interpolación). -->
   @if (almacen.aviso()) {
     <p id="aviso-almacenamiento" role="alert">{{ almacen.aviso() }}</p>

@@ -1,4 +1,4 @@
-import { Component, HostListener, computed, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, afterRenderEffect, computed, inject, viewChild } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter, map } from 'rxjs';
@@ -19,6 +19,16 @@ import { UiService } from '../services/ui.service';
 export class SidebarComponent {
   protected readonly ui = inject(UiService);
   private readonly router = inject(Router);
+  private readonly panel = viewChild<ElementRef<HTMLDialogElement>>('panel');
+
+  constructor() {
+    afterRenderEffect(() => {
+      const dialogo = this.panel()?.nativeElement;
+      if (!dialogo) return;
+      if (this.ui.sidebarAbierto() && !dialogo.open) dialogo.showModal();
+      if (!this.ui.sidebarAbierto() && dialogo.open) dialogo.close();
+    });
+  }
 
   protected readonly categorias = CATEGORIAS;
 
@@ -41,14 +51,14 @@ export class SidebarComponent {
 
   protected filtrar(categoria: string): void {
     void this.router.navigate(['/noticias'], {
-      queryParams: { categoria, q: this.busqueda() || null },
+      queryParams: { categoria, q: this.busqueda() || null, orden: this.arbol().queryParams['orden'] ?? null },
     });
     this.ui.cerrarSidebar();
   }
 
   protected buscar(texto: string): void {
     void this.router.navigate(['/noticias'], {
-      queryParams: { categoria: this.categoria(), q: texto.trim() ? texto : null },
+      queryParams: { categoria: this.categoria(), q: texto.trim() ? texto : null, orden: this.arbol().queryParams['orden'] ?? null },
       replaceUrl: true,
     });
   }

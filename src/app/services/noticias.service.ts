@@ -4,13 +4,12 @@ import { CATEGORIAS, Categoria, LIMITES, Noticia, NuevaNoticia } from '../models
 import { imagenSegura, urlSegura, IMAGEN_RESPALDO } from '../shared/utilidades';
 import { AlmacenamientoService } from './almacenamiento.service';
 import { FavoritosService } from './favoritos.service';
+import { idValido } from '../shared/identificadores';
+export { idValido } from '../shared/identificadores';
 
 const CLAVE_NOTICIAS = 'infonexia_noticias_creadas';
 
 /** Un ID válido es un número (catálogo JSON) o "u..." (noticia creada por el usuario). */
-export function idValido(id: unknown): boolean {
-  return /^(?:[1-9]\d{0,8}|u[\w-]{1,80})$/.test(String(id));
-}
 
 /** Valida la estructura de una noticia (JSON o localStorage). */
 export function noticiaValida(n: unknown, local = false): boolean {
@@ -96,13 +95,27 @@ export class NoticiasService {
   }
 
   /** Mini CRUD: eliminar. Solo se pueden borrar las creadas por el usuario. */
+  actualizar(id: string, datos: NuevaNoticia): boolean {
+    const actual = this.creadas().find((n) => n.id === id);
+    if (!actual) return false;
+    const editada: Noticia = { ...actual, ...datos, id: actual.id, fecha: actual.fecha, imagen: actual.imagen };
+    if (!noticiaValida(editada, true)) return false;
+    const lista = this.creadas().map((n) => n.id === id ? this.normalizar(editada) : n);
+    if (!this.almacen.guardarLista(CLAVE_NOTICIAS, lista)) return false;
+    this.creadas.set(lista);
+    return true;
+  }
+
+  /** Mini CRUD: eliminar. Solo se pueden borrar las creadas por el usuario. */
   eliminar(id: string): boolean {
     const actuales = this.creadas();
     if (!id.startsWith('u') || !actuales.some((n) => n.id === id)) return false;
     const resto = actuales.filter((n) => n.id !== id);
     if (!this.almacen.guardarLista(CLAVE_NOTICIAS, resto)) return false;
     this.creadas.set(resto);
-    this.favoritos.quitar(id);
+    if (!this.favoritos.quitar(id)) {
+      this.almacen.aviso.set('La noticia se eliminó, pero no se pudo actualizar sus favoritos guardados. Reintenta quitar el favorito o vaciar la lista.');
+    }
     return true;
   }
 
@@ -139,6 +152,9 @@ export class NoticiasService {
 
   /** IDs a texto, ruta de imagen local y enlace de fuente solo https. */
   private normalizar(n: Noticia): Noticia {
-    return { ...n, id: String(n.id), imagen: imagenSegura(n.imagen), fuenteUrl: urlSegura(n.fuenteUrl) };
+    const referencias = Array.isArray(n.referencias) ? n.referencias.filter((r) =>
+      r && typeof r.autor === 'string' && typeof r.fecha === 'string' && typeof r.titulo === 'string' && urlSegura(r.url))
+      .map((r) => ({ ...r, url: urlSegura(r.url) })) : [];
+    return { ...n, id: String(n.id), imagen: imagenSegura(n.imagen), fuenteUrl: urlSegura(n.fuenteUrl), referencias };
   }
 }

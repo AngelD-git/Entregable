@@ -1,13 +1,23 @@
 <div class="layout-con-sidebar">
   <section>
     <h1>Noticias</h1>
+    <div class="controles-lista">
+      <label for="orden-noticias">Ordenar por</label>
+      <select id="orden-noticias" #selector [value]="orden()" (change)="cambiarOrden(selector.value)">
+        <option value="recientes">Más recientes</option>
+        <option value="antiguas">Más antiguas</option>
+        <option value="az">Título A–Z</option>
+        <option value="za">Título Z–A</option>
+      </select>
+      @if (hayFiltros()) { <button type="button" class="btn secundario" (click)="limpiarFiltros()">Limpiar filtros</button> }
+    </div>
     <p #estado role="status" aria-live="polite" tabindex="-1">
       {{ filtradas().length }} noticias. Página {{ pagina() }} de {{ totalPaginas() }}.
     </p>
 
     <div class="grilla-noticias">
       @for (noticia of visibles(); track noticia.id) {
-        <app-noticia-card [noticia]="noticia" [mostrarEliminar]="esLocal(noticia)" (eliminar)="eliminar($event)" />
+        <app-noticia-card [noticia]="noticia" [mostrarEliminar]="esLocal(noticia)" (eliminar)="eliminar($event)" (editar)="editar(noticia)" />
       } @empty {
         <p class="estado-vacio">No se encontraron noticias con los filtros seleccionados.</p>
       }
@@ -29,9 +39,10 @@
 
     <!-- Mini CRUD: crear noticias (se guardan solo en este navegador). -->
     <div class="panel-admin">
-      <h2>Crear una noticia local</h2>
+      <h2>{{ editando() ? 'Editar noticia local' : 'Crear una noticia local' }}</h2>
       <p>Solo se guarda en este navegador y origen. No modifica el catálogo común ni se publica en Internet.</p>
       <p role="status" tabindex="-1">{{ estadoAlta() }}</p>
+      @if (guardada(); as id) { <a class="btn secundario" [routerLink]="['/noticia', id]">Ver noticia guardada</a> }
 
       <form class="formulario" [formGroup]="formulario" (ngSubmit)="guardar()" novalidate>
         <div class="campo">
@@ -50,7 +61,7 @@
         </div>
         <div class="campo campo-completo">
           <label for="nuevo-titulo">Título</label>
-          <input id="nuevo-titulo" type="text" formControlName="titulo" [maxlength]="limites.titulo"
+          <input #tituloCampo id="nuevo-titulo" type="text" formControlName="titulo" [maxlength]="limites.titulo"
                  placeholder="Título de la noticia" [attr.aria-invalid]="campoInvalido('titulo')">
         </div>
         <div class="campo campo-completo">
@@ -62,7 +73,8 @@
           <label for="nuevo-contenido">Contenido completo (máximo 12000 caracteres)</label>
           <textarea id="nuevo-contenido" formControlName="contenido" [maxlength]="limites.contenido"
                     [attr.aria-invalid]="campoInvalido('contenido')"></textarea>
-          <button type="submit" class="btn">Guardar en este navegador</button>
+          <button type="submit" class="btn">{{ editando() ? 'Guardar cambios' : 'Guardar en este navegador' }}</button>
+          @if (editando()) { <button type="button" class="btn secundario" (click)="cancelarEdicion()">Cancelar edición</button> }
         </div>
       </form>
     </div>

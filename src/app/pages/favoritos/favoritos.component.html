@@ -7,12 +7,18 @@
   }
 </p>
 
+<div class="controles-lista">
+  <label for="buscar-favoritos">Buscar en favoritos</label>
+  <input id="buscar-favoritos" type="search" #busqueda [value]="texto()" (input)="texto.set(busqueda.value)">
+  <button type="button" class="btn peligro" [disabled]="favoritos.ids().length === 0" (click)="vaciar()">Vaciar favoritos</button>
+</div>
+<p role="status">{{ mensaje() }}</p>
 <div class="grilla-noticias">
-  @for (noticia of lista(); track noticia.id) {
+  @for (noticia of visibles(); track noticia.id) {
     <app-noticia-card [noticia]="noticia" [mostrarQuitar]="true" (quitar)="favoritos.quitar($event)" />
   } @empty {
     <p class="estado-vacio">
-      Aún no has guardado noticias en favoritos.
+      {{ texto() ? 'No hay favoritos que coincidan con la búsqueda.' : 'Aún no hay noticias disponibles en tus favoritos.' }}
       <a routerLink="/noticias">Explora el catálogo</a>.
     </p>
   }

@@ -39,7 +39,7 @@ export class DetalleComponent {
     // Título de la pestaña según la noticia abierta.
     effect(() => {
       const n = this.noticia();
-      if (n) this.titulo.setTitle(`${n.titulo} | Infonexia`);
+      this.titulo.setTitle(n ? `${n.titulo} | Infonexia` : 'Noticia no encontrada | Infonexia');
     });
   }
 

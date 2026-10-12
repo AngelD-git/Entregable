@@ -1,18 +1,22 @@
 <article class="card">
   <a [routerLink]="['/noticia', noticia().id]">
-    <img [src]="noticia().imagen" [alt]="noticia().titulo" (error)="alFallar($event)">
+    <img loading="lazy" [src]="noticia().imagen" [alt]="noticia().titulo" (error)="alFallar($event)">
   </a>
   <div class="card-cuerpo">
     <span class="card-categoria">{{ noticia().categoria }}</span>
     <h3><a [routerLink]="['/noticia', noticia().id]">{{ noticia().titulo }}</a></h3>
     <p>{{ noticia().resumen | truncar: 110 }}</p>
     <div class="card-acciones">
-      <a class="btn" [routerLink]="['/noticia', noticia().id]">Leer noticia</a>
+      <a class="btn" [routerLink]="['/noticia', noticia().id]">Ver más</a>
+      <button type="button" class="btn secundario" [attr.aria-pressed]="favoritos.esFavorito(noticia().id)"
+        [attr.aria-label]="(favoritos.esFavorito(noticia().id) ? 'Quitar de favoritos: ' : 'Agregar a favoritos: ') + noticia().titulo"
+        (click)="favoritos.alternar(noticia().id)">{{ favoritos.esFavorito(noticia().id) ? 'Guardada' : 'Guardar favorita' }}</button>
       @if (mostrarEliminar()) {
+        <button type="button" class="btn secundario" (click)="editar.emit(noticia().id)">Editar</button>
         <button type="button" class="btn peligro" (click)="eliminar.emit(noticia().id)">Eliminar</button>
       }
       @if (mostrarQuitar()) {
-        <button type="button" class="btn peligro" (click)="quitar.emit(noticia().id)">Eliminar</button>
+        <button type="button" class="btn peligro" (click)="quitar.emit(noticia().id)">Quitar de favoritos</button>
       }
     </div>
   </div>

@@ -6,12 +6,13 @@
         type="button"
         class="menu-hamburguesa"
         aria-label="Abrir menú de categorías"
+        aria-controls="sidebar"
         [attr.aria-expanded]="ui.sidebarAbierto()"
         (click)="ui.alternarSidebar()"
       >☰</button>
       <a routerLink="/" class="marca">Infonexia</a>
     </div>
-    <nav class="nav-principal">
+    <nav class="nav-principal" aria-label="Navegación principal">
       <ul>
         <li><a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Inicio</a></li>
         <li><a routerLink="/noticias" routerLinkActive="activo">Noticias</a></li>

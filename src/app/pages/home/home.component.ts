@@ -1,5 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { NoticiasService } from '../../services/noticias.service';
 import { NoticiaCardComponent } from '../../shared/noticia-card.component';
 import { REGEX_CORREO } from '../../shared/utilidades';
@@ -8,7 +9,7 @@ import { REGEX_CORREO } from '../../shared/utilidades';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule, NoticiaCardComponent],
+  imports: [FormsModule, RouterLink, NoticiaCardComponent],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
@@ -29,7 +30,7 @@ export class HomeComponent {
       return;
     }
     this.exito.set(true);
-    this.mensaje.set('¡Gracias por suscribirte a Infonexia!');
+    this.mensaje.set('Correo válido. Esta demostración no guarda tu correo ni realiza una suscripción.');
     this.correo = '';
   }
 }

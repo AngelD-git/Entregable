@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ElementRef, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { correoValido, sinEspacios } from '../../shared/utilidades';
 
@@ -11,6 +11,7 @@ import { correoValido, sinEspacios } from '../../shared/utilidades';
 })
 export class ContactoComponent {
   private readonly fb = inject(FormBuilder);
+  private readonly elemento = inject<ElementRef<HTMLElement>>(ElementRef);
 
   protected readonly formulario = this.fb.nonNullable.group({
     nombre: ['', [sinEspacios]],
@@ -33,9 +34,10 @@ export class ContactoComponent {
     if (this.formulario.invalid) {
       this.formulario.markAllAsTouched();
       this.enviado.set(false);
+      const nombre = Object.keys(this.formulario.controls).find((campo) => this.formulario.get(campo)?.invalid);
+      if (nombre) this.elemento.nativeElement.querySelector<HTMLElement>('#' + nombre)?.focus();
       return;
     }
     this.enviado.set(true);
-    this.formulario.reset();
   }
 }

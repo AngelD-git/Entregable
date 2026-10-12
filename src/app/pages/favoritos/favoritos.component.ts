@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Noticia } from '../../models/noticia.model';
 import { FavoritosService } from '../../services/favoritos.service';
@@ -15,6 +15,15 @@ import { NoticiaCardComponent } from '../../shared/noticia-card.component';
 export class FavoritosComponent {
   protected readonly favoritos = inject(FavoritosService);
   private readonly noticias = inject(NoticiasService);
+  protected readonly texto = signal('');
+  protected readonly mensaje = signal('');
+  protected readonly visibles = computed(() => this.lista().filter((n) =>
+    (n.titulo + ' ' + n.resumen).toLocaleLowerCase('es').includes(this.texto().trim().toLocaleLowerCase('es'))));
+
+  protected vaciar(): void {
+    if (!confirm('¿Quitar todos los favoritos de este navegador?')) return;
+    this.mensaje.set(this.favoritos.vaciar() ? 'Lista de favoritos vaciada.' : 'No se pudo vaciar la lista. Revisa el aviso de almacenamiento.');
+  }
 
   /** Noticias cuyos IDs están guardados (ignora favoritos de noticias ya borradas). */
   protected readonly lista = computed(() =>

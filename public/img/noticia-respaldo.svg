@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="Imagen de noticia no disponible">
+  <rect width="800" height="480" fill="#e5e5e5"/>
+  <rect x="270" y="100" width="260" height="210" rx="16" fill="#0a192f"/>
+  <path d="M310 155h180M310 195h180M310 235h110" stroke="#fff" stroke-width="14"/>
+  <text x="400" y="385" text-anchor="middle" fill="#0a192f" font-family="Arial,sans-serif" font-size="28">Infonexia · Imagen no disponible</text>
+</svg>
