@@ -22,7 +22,7 @@ Base inspeccionada originalmente: bc97766. Durante la sesión se incorporaron aa
 | R16 | Parcial | Labels/aria, foco, dialog, Escape y skip link; falta auditoría con lector de pantalla |
 | R17 | Sí | Tests HTTP/reintento, Storage, fallback y rutas; avisos visibles |
 | R18 | Parcial | Pages vigente gh-pages; URL anterior comprobada; nueva revisión no desplegada |
-| R19 | Sí | Rama feat/entrega-final-infonexia-2026; commits previos conservados y cambios posteriores trazables |
+| R19 | Sí | Rama publicada feat/entrega-final-infonexia-2026; commit 9b26afb; PR #3 abierto; commits anteriores conservados |
 | R20 | Sí | README y docs de arquitectura, rutas, servicios, fuentes, pruebas, despliegue |
 
 Ver [PRUEBAS.md](PRUEBAS.md) para distinguir comprobaciones automáticas, manuales y pendientes.

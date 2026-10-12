@@ -14,6 +14,14 @@ Validación local: 12 de octubre de 2026. Node 22.16.0, npm 10.9.2, Angular 21. 
 
 El primer npm ci aislado falló por acceso de red. npm 10 encontró un fallo interno edgesOut al añadir el runner; se generó el lockfile con npm 11 sin instalación global y después npm ci 10 terminó correctamente. La corrección de seguridad fue compatible con Angular 21; no se cambió versión mayor.
 
+## Verificación remota y trazabilidad
+
+La corrección final de imagen está en `9b26afb` y se publicó en `feat/entrega-final-infonexia-2026`, con upstream de la misma rama. [PR #3](https://github.com/AngelD-git/Entregable/pull/3): abierto, integrable, sin merge realizado por esta ejecución.
+
+GitHub Actions aprobó las dos verificaciones del commit `9b26afb`: [ejecución por push](https://github.com/AngelD-git/Entregable/actions/runs/38210041696) y [ejecución del PR](https://github.com/AngelD-git/Entregable/actions/runs/38210103851). Estas verificaciones comprueban instalación, catálogo, tests y build; no publican Pages. También se verificó que el build contiene base `/Entregable/`, 14 noticias, sus imágenes y el respaldo.
+
+Los cambios principales anteriores están en `aaa6a9f`, `0409a01` y `0ff70bd`, commits incorporados también a `origin/main` durante la sesión. Se conservaron y no se duplicaron en nuevos commits.
+
 ## Aceptación
 
 | Casos | Evidencia ejecutada |
