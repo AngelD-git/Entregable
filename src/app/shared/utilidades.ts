@@ -20,11 +20,10 @@ export function urlSegura(url: unknown): string {
   }
 }
 
-/** Si una imagen no existe, se cambia una sola vez por la imagen de respaldo. */
+/** Reemplaza cada recurso fallido; evita reintentos si falla el propio respaldo. */
 export function imagenRespaldo(evento: Event): void {
   const img = evento.target as HTMLImageElement;
-  if (!img.dataset['respaldo']) {
-    img.dataset['respaldo'] = '1';
+  if (img.src !== new URL(IMAGEN_RESPALDO, document.baseURI).href) {
     img.src = IMAGEN_RESPALDO;
   }
 }

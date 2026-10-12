@@ -1,6 +1,6 @@
 # Matriz técnica
 
-Base inspeccionada originalmente: bc97766. Durante la sesión se incorporaron aaa6a9f y 0409a01 (actualizacion 1/2), presentes también en origin/main; se preservan. Mejoras posteriores se registran aparte. Estado local validado el 12/10/2026.
+Base inspeccionada originalmente: bc97766. Durante la sesión se incorporaron aaa6a9f, 0409a01 y 0ff70bd (actualizacion 1/2/3), presentes también en origin/main; se preservan. El árbol quedó limpio antes de la revisión final; los cambios ya integrados se preservan y las correcciones posteriores se registran aparte. Estado local validado el 12/10/2026.
 
 | ID | Estado | Evidencia |
 |---|---|---|

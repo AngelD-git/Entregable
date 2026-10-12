@@ -27,7 +27,7 @@ El primer npm ci aislado falló por acceso de red. npm 10 encontró un fallo int
 | T14 | Tests de confirmación aceptada/cancelada y fallo de guardado al vaciar |
 | T15–T16 | Tests y navegador: email inválido recibe foco/error; validación válida declara que no se envió y conserva mensaje |
 | T17 | Navegador mostró aviso demo; validadores de correo probados. No se simuló envío remoto |
-| T18 | Test de evento error cambia una sola vez al respaldo; existencia de archivo verificada |
+| T18 | Test de error aplica respaldo, no lo reintenta si falla y lo reaplica para otra noticia; existencia del archivo verificada |
 | T19 | Navegador: apertura del menú con Enter, cierre Escape, foco devuelto al botón y scroll restaurado. Pendiente auditoría completa de teclado/lector de pantalla |
 | T20 | Navegador a 375 px (detalle/contacto) y 1280 px (inicio): imágenes visibles cargadas y scrollWidth menor que innerWidth, sin overflow horizontal. No es auditoría de todos los dispositivos |
 | T21 | Builds producción y Pages aprobados |

@@ -12,15 +12,19 @@ describe('Recursos, validaciones y ordenación', () => {
     expect(urlSegura('https://usuario:clave@example.org')).toBe('');
     expect(urlSegura('https://example.org/nota')).toBe('https://example.org/nota');
   });
-  it('cambia la imagen una sola vez', () => {
+  it('no reintenta el respaldo, pero vuelve a aplicarlo al reutilizar la imagen para otra noticia', () => {
     const img = document.createElement('img');
     const evento = new Event('error');
     img.addEventListener('error', imagenRespaldo);
     img.dispatchEvent(evento);
     expect(img.getAttribute('src')).toBe(IMAGEN_RESPALDO);
+    const asignar = vi.spyOn(img, 'src', 'set');
+    img.dispatchEvent(new Event('error'));
+    expect(asignar).not.toHaveBeenCalled();
     img.setAttribute('src', 'img/otra.jpg');
     img.dispatchEvent(new Event('error'));
-    expect(img.getAttribute('src')).toBe('img/otra.jpg');
+    expect(img.getAttribute('src')).toBe(IMAGEN_RESPALDO);
+    asignar.mockRestore();
   });
   it('valida espacios y correos con mensajes independientes', () => {
     expect(sinEspacios(new FormControl('   '))).toEqual({ required: true });
