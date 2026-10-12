@@ -40,7 +40,7 @@
       "architect": {
         "test": {
           "builder": "@angular/build:unit-test",
-          "options": { "tsConfig": "tsconfig.spec.json" }
+          "options": { "tsConfig": "tsconfig.spec.json", "runnerConfig": "vitest.config.mts" }
         },
         "build": {
           "builder": "@angular/build:application",

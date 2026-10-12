@@ -1,78 +1,44 @@
 # Infonexia
 
-Portal web de noticias de **Tecnología** y **Educación**, hecho con **Angular**. Permite explorar un catálogo de noticias, leer cada una en detalle, guardar favoritas, escribir a la redacción y crear noticias propias.
+Portal de noticias de tecnología y educación en Angular 21, con seis vistas, catálogo JSON, favoritos persistentes y CRUD local.
 
-**Sitio publicado:** https://angeld-git.github.io/Entregable/
+## Ejecutar y verificar
 
-## Funcionalidades
+Node.js 22.12 o posterior de la rama 22. No requiere Angular CLI global.
 
-- Catálogo de noticias en tarjetas, con filtro por categoría, búsqueda y paginación.
-- Detalle de cada noticia con imagen, crédito, enlace a la fuente original, botón de compartir y noticias relacionadas.
-- Favoritos guardados en el navegador (`localStorage`).
-- Formulario de contacto con validaciones y mensaje de confirmación.
-- Creación y eliminación de noticias propias, que solo existen en el navegador del usuario.
-- Boletín informativo en la página de inicio.
-- Páginas: Inicio, Noticias, Nosotros, Favoritos y Contacto.
-
-## Tecnologías
-
-- Angular (componentes standalone, signals, enrutador y formularios reactivos)
-- TypeScript
-- HTML y CSS
-- JSON local como fuente de datos
-- GitHub Actions y GitHub Pages para el despliegue
-
-## Estructura
-
-```
-.
-├─ .github/workflows/   Despliegue automático a GitHub Pages
-├─ docs/                Arquitectura del proyecto y fuentes de las noticias
-├─ public/
-│  ├─ data/             Catálogo de noticias (noticias.json)
-│  └─ img/              Imágenes de las noticias
-├─ tools/               Script para descargar las imágenes originales
-└─ src/
-   ├─ index.html · main.ts · styles.css
-   └─ app/
-      ├─ models/        Modelo de datos de las noticias
-      ├─ services/      Noticias, favoritos, almacenamiento e interfaz
-      ├─ shared/        Header, panel lateral, footer, tarjeta, pipes y utilidades
-      └─ pages/         Inicio, Noticias, Detalle, Favoritos, Contacto y Nosotros
-```
-
-Cada componente tiene su archivo `.ts` (lógica) y su `.html` (plantilla).
-
-## Ejecutar en local
-
-Requiere Node.js 22 y Angular CLI.
-
-```bash
-npm install
+```sh
+npm ci
 npm start
+npm run check:content
+npm test
+npm run build
+npm run build:pages
 ```
 
-La aplicación queda disponible en `http://localhost:4200`.
+Servidor: http://localhost:4200/. El build Pages genera dist/infonexia/browser/ con base /Entregable/.
 
-## Despliegue
+## Funciones
 
-Cada vez que se sube un cambio a la rama `main`, GitHub Actions compila el proyecto y lo publica en GitHub Pages. Solo hay que tener activado **Settings → Pages → Source → GitHub Actions** en el repositorio.
+- Inicio con destacados, llamada al catálogo y cinco avances científicos con IA.
+- Catálogo de 14 noticias: búsqueda, categorías, cuatro órdenes, páginas de seis elementos y filtros en URL.
+- Detalle con citas y referencias APA, imagen acreditada, favoritos y copia de enlace.
+- Favoritos desde tarjetas/detalle, búsqueda y vaciado confirmado.
+- Crear, editar y eliminar noticias locales. La edición conserva ID, fecha y favoritos; no modifica el catálogo JSON.
+- Contacto y boletín de demostración: validan en el navegador, sin guardar ni enviar mensajes o correos.
+- Manejo de almacenamiento bloqueado/corrupto, reintento de JSON y respaldo de imagen.
 
-## Imágenes
+## Noticias y publicación
 
-Las imágenes de las noticias se descargan de sus fuentes originales con:
+Las nueve noticias anteriores se revisaron con enfoque constructivo; UNAM fue sustituida por Michael Crow. Gates se contrastó con Gates Notes y una actualización posterior de la fundación. Las cinco noticias científicas distinguen resultados y posibilidades. [Fuentes](docs/FUENTES.md) y [licencias de imágenes](public/img/LICENCIAS.md).
 
-```bash
-python tools/descargar_imagenes.py
-```
+[Sitio público existente](https://angeld-git.github.io/Entregable/). Pages usa gh-pages y raíz /, tipo legacy; el sitio puede seguir mostrando la versión anterior. El PR no despliega automáticamente. [.github/workflows/ci.yml](.github/workflows/ci.yml) comprueba catálogo, tests y build; no publica. [Procedimiento de despliegue](docs/DESPLIEGUE.md).
 
-Después hay que subir al repositorio lo descargado en `public/img/`. Si una imagen falta, la página muestra una imagen de respaldo.
+## Documentación
 
-## Documentación adicional
+- [Arquitectura](docs/ARQUITECTURA.md)
+- [Rutas y páginas](docs/RUTAS_Y_PAGINAS.md)
+- [Servicios y estado](docs/SERVICIOS_ESTADO.md)
+- [Pruebas](docs/PRUEBAS.md)
+- [Matriz técnica](docs/ESTADO_TECNICO.md)
 
-- [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md): componentes, rutas y flujo de datos.
-- [`docs/FUENTES.md`](docs/FUENTES.md): procedencia de cada noticia e imagen.
-
-## Créditos
-
-Los textos de las noticias están redactados con palabras propias a partir de cada nota original, y cada una enlaza a su fuente. Las imágenes pertenecen a sus medios o autores y se muestran con su crédito.
+El trabajo histórico en legacy se conserva y no se incluye en el build.
